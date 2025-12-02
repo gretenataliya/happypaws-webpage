@@ -2,25 +2,29 @@ import "./style.css";
 import { products } from "./assets/products";
 
 // Testkod:
-const test = () => {
-  const app = document.getElementById("app");
+const renderTopSellers = () => {
+  const topSellerContainer = document.getElementById("topSellerContainer");
 
-  if (app) {
+  if (topSellerContainer) {
     products.forEach((product) => {
-      const container = document.createElement("div");
-      const name = document.createElement("h2");
-      const imgContainer = document.createElement("div");
-      const img = document.createElement("img");
+      if (product.isTopSeller === true) {
+        const card = document.createElement("div");
+        const name = document.createElement("h2");
+        const imgContainer = document.createElement("div");
+        const img = document.createElement("img");
 
-      name.innerHTML = product.name;
-      img.src = product.img;
+        name.innerHTML = product.name;
+        img.src = product.img;
+        card.className = "topSellerCard";
+        imgContainer.className = "imgContainer";
 
-      container.appendChild(name);
-      imgContainer.appendChild(img);
-      container.appendChild(imgContainer);
-      app.appendChild(container);
+        card.appendChild(name);
+        imgContainer.appendChild(img);
+        card.appendChild(imgContainer);
+        topSellerContainer.appendChild(card);
+      }
     });
   }
 };
 
-test();
+renderTopSellers();
