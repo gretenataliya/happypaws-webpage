@@ -1,0 +1,92 @@
+export const products = [
+  {
+    name: "Bacon Treats",
+    img: "/src/assets/productImages/bacon-treats.png",
+    category: "eat",
+    price: 99,
+  },
+  {
+    name: "Big Bones",
+    img: "/src/assets/productImages/big-bones.png",
+    category: "eat",
+    price: 99,
+  },
+  {
+    name: "Black Collar",
+    img: "/src/assets/productImages/black-collar.png",
+    category: "walk",
+    price: 99,
+  },
+  {
+    name: "Black Lead",
+    img: "/src/assets/productImages/black-lead.png",
+    category: "walk",
+    price: 99,
+  },
+  {
+    name: "Chew Treat",
+    img: "/src/assets/productImages/chew-treat.png",
+    category: "eat",
+    price: 99,
+  },
+  {
+    name: "Lamb Strips",
+    img: "/src/assets/productImages/lamb-strips.png",
+    category: "eat",
+    price: 99,
+  },
+  {
+    name: "Leopard Collar",
+    img: "/src/assets/productImages/leopard-collar.png",
+    category: "walk",
+    price: 99,
+  },
+  {
+    name: "Mini Bones",
+    img: "/src/assets/productImages/mini-bones.png",
+    category: "eat",
+    price: 99,
+  },
+  {
+    name: "Mint Lead",
+    img: "/src/assets/productImages/mint-lead.png",
+    category: "walk",
+    price: 99,
+  },
+  {
+    name: "Owl Plushie",
+    img: "/src/assets/productImages/owl-plush.png",
+    category: "sleep",
+    price: 99,
+  },
+  {
+    name: "Pink Collar",
+    img: "/src/assets/productImages/pink-collar.png",
+    category: "walk",
+    price: 99,
+  },
+  {
+    name: "Plaid Bed",
+    img: "/src/assets/productImages/plaid-bed.png",
+    category: "sleep",
+    price: 99,
+  },
+  {
+    name: "Star Bed",
+    img: "/src/assets/productImages/star-bed.png",
+    category: "sleep",
+    price: 99,
+  },
+  {
+    name: "Striped Bed",
+    img: "/src/assets/productImages/stripe-bed.png",
+    category: "sleep",
+    price: 99,
+  },
+  {
+    name: "Striped Mattress",
+    img: "/src/assets/productImages/stripe-mattress.png",
+    category: "sleep",
+    price: 99,
+  },
+];
