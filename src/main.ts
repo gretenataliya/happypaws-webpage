@@ -1,7 +1,7 @@
 import "./style.css";
 import { products } from "./assets/products";
 
-// Testkod:
+// Visa TopSeller-produkter på landing page:
 const renderTopSellers = () => {
   const topSellerContainer = document.getElementById("topSellerContainer");
 
@@ -30,5 +30,5 @@ const renderTopSellers = () => {
     });
   }
 };
-
 renderTopSellers();
+//-------------------------------------------------------------
