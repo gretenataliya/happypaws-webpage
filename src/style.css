@@ -1,0 +1,65 @@
+
+
+/* Styling för Top Seller-section */
+#topSellerSection {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#topSellerContainer {
+ display: flex;
+ justify-content: center;
+}
+
+.topSellerCard {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 1rem;
+ border: 1px solid black;
+ border-radius: 5%;
+}
+.topSellerCard h3, h4 {
+  margin: 0;
+}
+.imgContainer {
+  overflow: hidden;
+  border-radius: 5%;
+}
+.productImg:hover {
+  transition: transform .5s ease;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.imgContainer > img {
+  height: 200px;
+  width: 200px;
+}
+
+/* Styling för Footer */
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(215, 212, 212);
+  margin-top: 1rem;
+}
+
+.footer h4 {
+  margin: 0;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: baseline;
+  margin: 1rem;
+}
