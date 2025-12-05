@@ -1,10 +1,31 @@
 import { products } from "../assets/products";
 
+document.getElementById("allBtn")?.addEventListener("click", () => {
+  renderProducts(products);
+});
+
+document.getElementById("eatBtn")?.addEventListener("click", () => {
+  renderProducts(products.filter((product) => product.category == "eat"));
+});
+
+document.getElementById("sleepBtn")?.addEventListener("click", () => {
+  renderProducts(products.filter((product) => product.category == "sleep"));
+});
+
+document.getElementById("walkBtn")?.addEventListener("click", () => {
+  renderProducts(products.filter((product) => product.category == "walk"));
+});
+
+document.getElementById("playBtn")?.addEventListener("click", () => {
+  renderProducts(products.filter((product) => product.category == "play"));
+});
+
 // Visa produkter på product page:
-const renderProducts = () => {
+function renderProducts(products) {
   const productContainer = document.getElementById("productContainer");
 
   if (productContainer) {
+    productContainer.innerHTML = "";
     products.forEach((product) => {
       const card = document.createElement("div");
       const name = document.createElement("h3");
@@ -26,6 +47,6 @@ const renderProducts = () => {
       productContainer.appendChild(card);
     });
   }
-};
-renderProducts();
+}
+
 //-------------------------------------------------------------
