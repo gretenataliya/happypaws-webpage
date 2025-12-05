@@ -134,4 +134,49 @@ export const products = [
     price: 99,
     isTopSeller: true,
   },
+  {
+    name: "Ball Toy",
+    img: "/src/assets/productImages/ball-toy.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    category: "play",
+    price: 99,
+    isTopSeller: false,
+  },
+  {
+    name: "Carrot Toy",
+    img: "/src/assets/productImages/carrot-toy.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    category: "play",
+    price: 99,
+    isTopSeller: false,
+  },
+  {
+    name: "Frog Toy",
+    img: "/src/assets/productImages/frog-toy.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    category: "play",
+    price: 99,
+    isTopSeller: false,
+  },
+  {
+    name: "Ring Toy",
+    img: "/src/assets/productImages/ring-toy.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    category: "play",
+    price: 99,
+    isTopSeller: false,
+  },
+  {
+    name: "Tug Toy",
+    img: "/src/assets/productImages/tug-toy.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    category: "play",
+    price: 99,
+    isTopSeller: false,
+  },
 ];
