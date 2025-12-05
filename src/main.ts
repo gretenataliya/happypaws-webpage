@@ -1,5 +1,4 @@
-/* import "./style.css"; <---- LÖS PATHEN*/
-
+import './main.scss';
 import { products } from "./assets/products";
 
 // Visa TopSeller-produkter på landing page:
