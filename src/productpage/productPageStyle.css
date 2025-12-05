@@ -1,0 +1,770 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #fff7f0;
+  color: rgba(33, 53, 71, 0.5529411765);
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.logo-link img {
+  height: 70px;
+  width: auto;
+}
+.logo-link span {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffd27f;
+  letter-spacing: 0.25em;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 18px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+.hero-overlay h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.hero-overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  color: #555;
+}
+@media (min-width: 1200px) {
+  .hero-overlay {
+    top: 48%;
+    bottom: auto;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    max-width: 520px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hero-overlay h1 {
+    font-size: 48px;
+    line-height: 1.25;
+    margin: 0;
+    color: #1d2a38;
+  }
+  .hero-overlay p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+    max-width: 420px;
+  }
+}
+
+.topSellerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5%;
+}
+.topSellerCard h3,
+.topSellerCard h4 {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #fff7f0; /* soft beige */
+  color: rgba(33, 53, 71, 0.5529411765);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ======================================
+   HEADER + TOP BAR
+====================================== */
+.site-header {
+  width: 100%;
+}
+
+/* hela topbaren */
+.menu {
+  background: #0e161d;
+  color: #fff;
+  padding: 10px 32px;
+  position: relative;
+  z-index: 100;
+}
+
+/* rader i topbaren */
+.menu-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.menu-row-top {
+  justify-content: space-between;
+}
+
+.menu-row-bottom {
+  display: none; /* visas bara på mobil */
+}
+
+/* logo vänster */
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.logo-link img {
+  height: 70px;
+  width: auto;
+}
+
+.logo-link span {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffd27f;
+  letter-spacing: 0.25em;
+}
+
+/* SEARCH – gemensam stil (desktop + mobil) */
+.search-bar {
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background: #f3f3f3;
+  border-radius: 999px;
+  padding: 4px;
+  margin-right: 50px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 8px 8px;
+  border-radius: 999px;
+  font-size: 14px;
+  background: transparent;
+}
+
+.search-bar input::-moz-placeholder {
+  color: #999;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  border: none;
+  background: #ffffff;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-btn img {
+  width: 36px;
+  height: 36px;
+}
+
+/* desktop-search  */
+.desktop-search {
+  flex: 1;
+  margin: 0 40px;
+}
+
+/* CART */
+.cart-btn {
+  border: none;
+  background: #ffffff;
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  margin-right: 20px;
+}
+
+.cart-btn img {
+  width: 36px;
+  height: 36px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 10px;
+  border-radius: 999px;
+  border: 1px solid rgb(63, 68, 93);
+  padding: 2px 5px;
+}
+
+/* HAMBUGER (bara struktur, visas på mobil) */
+.hamburger-menu {
+  display: none; /* desktop */
+}
+
+/* checkbox som styr sidomenyn */
+.menu-toggle {
+  position: absolute;
+  left: -9999px;
+}
+
+/* overlay bakom sidomeny */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: none;
+  z-index: 90;
+}
+
+/* ======================================
+   DESKTOP CATEGORY NAV
+====================================== */
+.main-nav {
+  background: #1c2934;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 15px 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.main-nav a {
+  color: #ffffff;
+  font-weight: 500;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #ffd27f;
+  transition: width 0.2s ease;
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* ======================================
+   HERO
+====================================== */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* MOBIL */
+.hero-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 360px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px 18px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.hero-overlay h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hero-overlay p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  color: #555;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background-color: #ffb84d;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 6px 14px rgba(255, 184, 77, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.hero-btn:hover {
+  background-color: #ffa63a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(255, 184, 77, 0.45);
+}
+
+/* ======================================
+   FEATURED PRODUCTS - vi ändrar sen 
+====================================== */
+.featured {
+  padding: 48px 16px 56px;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.product-placeholder {
+  padding: 28px 16px;
+  background-color: #f6eee5;
+  border-radius: 10px;
+  border: 1px solid #ebdfd0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* ======================================
+   FOOTER - vi ändrar sen 
+====================================== */
+.footer {
+  padding: 16px;
+  text-align: center;
+  color: #888;
+  font-size: 13px;
+}
+
+/* ======================================
+   DESKTOP HERO (Texten som är i vita bubblan ) 
+====================================== */
+@media (min-width: 1200px) {
+  .search-bar {
+    margin-left: 500px;
+    margin-right: 1px;
+    width: 400px;
+  }
+  .hero-overlay {
+    top: 48%;
+    bottom: auto;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    max-width: 520px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .hero-overlay h1 {
+    font-size: 48px;
+    line-height: 1.25;
+    margin: 0;
+    color: #1d2a38;
+  }
+  .hero-overlay p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #444;
+    margin: 0;
+    max-width: 420px;
+  }
+  .hero-btn {
+    font-size: 16px;
+    padding: 14px 32px;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+  .featured {
+    padding: 64px 60px 56px;
+  }
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+/* ======================================
+   SIDEBAR (på mobil)
+====================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  max-width: 280px;
+  height: 100vh;
+  background: #0f0d0d;
+  padding-top: 70px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 250;
+}
+
+.sidebar-close-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 32px;
+  color: #ffd27f;
+  cursor: pointer;
+  z-index: 300;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav a {
+  padding: 16px 20px;
+  font-size: 18px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-nav a span {
+  color: #ffd27f;
+}
+
+/* checkbox styr sidebar + overlay */
+.menu-toggle:checked ~ .sidebar {
+  transform: translateX(0);
+}
+
+.menu-toggle:checked ~ .menu-overlay {
+  display: block;
+}
+
+/* ======================================
+   MOBIL-LAYOUT
+====================================== */
+@media (max-width: 768px) {
+  /* main-nav under header göms på mobil */
+  .main-nav {
+    display: none;
+  }
+  /* visa nedre raden i headern (hamburger + search) */
+  .menu-row-bottom {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 25px;
+    gap: 235px;
+  }
+  /* desktop-sök döljs på mobil */
+  .desktop-search {
+    display: none;
+  }
+  /* mobil-sök tar hela bredden bredvid hamburgaren */
+  .mobile-search {
+    flex: 1;
+  }
+  /* hamburger – synlig på mobil */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger-menu span {
+    width: 28px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+  /* lyft upp hero-kortet lite på mobil */
+  .hero-overlay {
+    bottom: 30px;
+  }
+  .search-bar {
+    margin-right: 500px;
+    margin-left: -20px;
+  }
+}
+/* Styling för Top Seller-section */
+#topSellerSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#topSellerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.topSellerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+.topSellerCard h3, h4 {
+  margin: 0;
+}
+
+.imgContainer {
+  overflow: hidden;
+  border-radius: 5%;
+}
+
+.productImg:hover {
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.imgContainer > img {
+  height: 200px;
+  width: 200px;
+}
+
+/* Styling för Footer */
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(215, 212, 212);
+  margin-top: 1rem;
+}
+
+.footer h4 {
+  margin: 0;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: baseline;
+  margin: 1rem;
+}
+
+/* ============================
+   MINI CART DROPDOWN (DESKTOP)
+============================ */
+.cart-wrapper {
+  position: relative;
+}
+
+/* döljs som default, JS lägger till .mini-cart--open */
+.mini-cart {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 280px;
+  max-height: 340px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  padding: 10px;
+  display: none;
+  z-index: 300;
+}
+
+.mini-cart--open {
+  display: block;
+}
+
+.mini-cart-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 320px;
+}
+
+.mini-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.mini-cart-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d2a38;
+}
+
+.mini-cart-close {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ffb84d;
+}
+
+/* items scrollbara om det blir många */
+.mini-cart-items {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+/* enskild produkt */
+.mini-cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px;
+  padding: 6px 0;
+  border-bottom: 1px solid #f3f3f3;
+  font-size: 13px;
+}
+
+.mini-cart-item:last-child {
+  border-bottom: none;
+}
+
+.mini-cart-item-name {
+  font-weight: 500;
+  color: #333;
+}
+
+.mini-cart-item-meta {
+  color: #777;
+}
+
+.mini-cart-item-qty-price {
+  text-align: right;
+  color: #555;
+}
+
+/* footer */
+.mini-cart-footer {
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mini-cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d2a38;
+}
+
+.mini-cart-link {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #ffb84d;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* mini-cart bara på desktop/lite större skärmar */
+@media (max-width: 900px) {
+  .mini-cart {
+    display: none !important;
+  }
+}/*# sourceMappingURL=productPageStyle.css.map */
