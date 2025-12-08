@@ -550,17 +550,19 @@ a {
 
 }
 
-/* Styling för Top Seller-section */
-#topSellerSection {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
+/* Styling för product-section */
+.productSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#topSellerContainer {
- display: flex;
- justify-content: center;
+.productContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2rem;
 }
 
 .topSellerCard {
