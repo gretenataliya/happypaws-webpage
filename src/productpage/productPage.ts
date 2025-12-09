@@ -24,6 +24,9 @@ document.getElementById("playBtn")?.addEventListener("click", () => {
 });
 
 //---------------------------------------------------------------------------
+//---KNAPP FÖR SORTERING:
+
+//---------------------------------------------------------------------------
 
 renderProducts(products);
 
