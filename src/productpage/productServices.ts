@@ -1,4 +1,5 @@
-import type { Product } from "../models/product";
+
+import type { Product } from "../models/Product";
 
 // ------Visa produkter på product page:-------------------------------------
 export function renderProducts(products: Product[]) {

@@ -1,4 +1,4 @@
-import '../../main.scss';   // om du vill ha ALLA globala styles här också
+import '../../main.scss'; 
 import './cart.scss';
 
 interface CartItem {
@@ -39,7 +39,7 @@ function getTotals(cart: CartItem[]): { totalItems: number; totalPrice: number }
   return { totalItems, totalPrice };
 }
 
-// 🔹 GÖR TILL EXPORT + låt cart vara optional
+// GÖR TILL EXPORT + låt cart vara optional
 export function updateCartBadge(cartFromOutside?: CartItem[]): void {
   if (!cartBadge) return;
 
@@ -48,7 +48,7 @@ export function updateCartBadge(cartFromOutside?: CartItem[]): void {
   cartBadge.textContent = totalItems.toString();
 }
 
-// 🔹 Ändra signaturen så quantity är optional (så hennes kod funkar)
+// Ändra signaturen sen på quantity till optional
 export function addToCart(newItem: {
   id: string;
   name: string;
@@ -132,7 +132,7 @@ function renderCart(): void {
   cartContainer.innerHTML = '';
 
   if (cart.length === 0) {
-    cartContainer.innerHTML = `<p class="cart-empty">Din kundvagn är tom.</p>`;
+    cartContainer.innerHTML = `<p class="cart-empty">Your cart is empty.</p>`;
     totalItemsElement.textContent = '0';
     totalPriceElement.textContent = '0 kr';
 
@@ -212,12 +212,7 @@ renderCart();
 // Om du vill kunna anropa från andra TS-filer
 // exempel: import { addToCart } i produktlistan
 
-// 🚧 Bara för test – ta bort sen
-// importera inget här, bara klistra in längst ner i cart.ts
-
-// Testa att lägga till en produkt automatiskt
-// så du ser att sidan renderar allt rätt
-// Kommentera bort detta när du är klar med testet.
+// ENDAST TEST
 addToCart({
   id: 'test-1',
   name: 'Test-leksak',
