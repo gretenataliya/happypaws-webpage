@@ -51,12 +51,13 @@ a {
 }
 
 /* hela topbaren */
-.menu {
-  background: $color-header-bg;
-  color: #fff;
-  margin: 0 auto;
-  position: relative;
-  
+body {
+  .menu {
+    background: $color-header-bg;
+    color: #fff;
+    margin: 0 auto;
+    position: relative;
+
 }
 
 /* rader i topbaren */
@@ -987,4 +988,5 @@ desktop-search
   #topSellerContainer {
     padding: 0 12px 24px;
   }
+}
 }
