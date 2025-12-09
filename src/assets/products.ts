@@ -3,18 +3,17 @@ export const products = [
     name: "Bacon Treats",
     img: "/src/assets/productImages/bacon-treats.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Cripsy tasty treats with bacon filling. Perfect for smaller dogs or for bringing on a walk.",
     category: "eat",
-    price: 99,
+    price: 60,
     isTopSeller: true,
   },
   {
     name: "Big Bones",
     img: "/src/assets/productImages/big-bones.png",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: "Crispy bone-shaped biscuits that your dog will love!",
     category: "eat",
-    price: 99,
+    price: 50,
     isTopSeller: false,
   },
   {
@@ -39,18 +38,18 @@ export const products = [
     name: "Chew Treat",
     img: "/src/assets/productImages/chew-treat.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "A popular chew treat made with 100% elk skin. Lasts for hours and is great for your pup's teeth!",
     category: "eat",
-    price: 99,
+    price: 90,
     isTopSeller: false,
   },
   {
     name: "Lamb Strips",
     img: "/src/assets/productImages/lamb-strips.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Long chewy strips with lamb flavor that your dog will love! Perfect as a reward during training or as a tasty treat.",
     category: "eat",
-    price: 99,
+    price: 70,
     isTopSeller: false,
   },
   {
@@ -59,16 +58,16 @@ export const products = [
     description:
       "Leopard Dog Collar is purrrfect for the trendy and bold dog. With its colorful leopard print, your dog will be the coolest on the walk.",
     category: "walk",
-    price: 99,
+    price: 150,
     isTopSeller: false,
   },
   {
     name: "Mini Bones",
     img: "/src/assets/productImages/mini-bones.png",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Crispy bone-shaped biscuits that your dog will love. Comes in different flavors for some fun variety!",
     category: "eat",
-    price: 99,
+    price: 45,
     isTopSeller: false,
   },
   {
@@ -144,7 +143,7 @@ export const products = [
     isTopSeller: false,
   },
   {
-    name: "Carrot Plush Toy",
+    name: "Carrot Plush",
     img: "/src/assets/productImages/carrot-toy.png",
     description:
       "This charming soft plush carrot includes a built-in squeaker to provide your dog with hours of fun.",
@@ -155,13 +154,14 @@ export const products = [
   {
     name: "Frog Toy",
     img: "/src/assets/productImages/frog-toy.png",
-    description: "",
+    description:
+      "With a soft, fine corduroy body and strong rope arms and legs, this frog is designed to be a sturdy, fun companion for your four-legged friend. Its super-squeaky tummy is sure to keep your dog entertained for hours.",
     category: "play",
     price: 110,
     isTopSeller: false,
   },
   {
-    name: "Frankie Dog Ring Toy",
+    name: "Frankie Dog Ring",
     img: "/src/assets/productImages/ring-toy.png",
     description:
       "This Frankie Sausage Dog Ring is a great fun toy for your pooch. With an adorable striped scarf, rope pull and squeaky head, Frankie will provide hours of entertainment and keep your dog's tail wagging!",
