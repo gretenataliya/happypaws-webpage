@@ -103,19 +103,78 @@ body {
     }
   }
 }
-.topSellerCard {
+
+#productCardSection {
+  max-width: 200px;
+  margin: 30px auto 48px;
+  padding: 0 16px;
+  text-align: center;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #555;
+  }
+}
+
+#productContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 50px;
+  gap: 12px;
+}
+
+/* Själva kortet */
+.productCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  margin: auto;
+  padding: 10px;
+  width: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  border: 1px solid black;
-  border-radius: 5%;
+  gap: 8px;
 
-  h3,
+  h3 {
+    margin: 6px 0 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+
   h4 {
     margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #777;
   }
 }
+
+/* Bilden i kortet */
+.imgContainer {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+
+  img,
+  .productImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.productImg:hover {
+  transition: transform 0.4s ease;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 
 *,
 *::before,
@@ -364,6 +423,30 @@ a {
   color: #777;
   font-size: 14px;
 }
+
+@media (max-width: 375px) {
+
+  #productContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px; // valfritt men ger snyggare layout
+  }
+
+  .productCard {
+    width: 100%;   // låt korten anpassa sig till gridet
+    height: auto;
+  }
+}
+/* end @media (max-width: 375px) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
 
 /* ======================================
    FOOTER - vi ändrar sen 

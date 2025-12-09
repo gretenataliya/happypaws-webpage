@@ -17,7 +17,7 @@ export function renderProducts(products: Product[]) {
       price.innerHTML = product.price.toString() + " SEK";
       img.src = product.img;
       img.className = "productImg";
-      card.className = "topSellerCard";
+      card.className = "productCard";
       imgContainer.className = "imgContainer";
 
       imgContainer.appendChild(img);
