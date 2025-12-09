@@ -1,0 +1,388 @@
+/* ============================
+   SIDLAYOUT – gör så att footern
+   hamnar längst ner på sidan
+============================ */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: 60vh;     // hur mycket "höjd" cartdelen får
+  padding-bottom: 40px; // lite luft innan footer
+}
+
+/* ============================
+   CART PAGE WRAPPER
+============================ */
+
+.cart-page {
+  background-color: #fff7f0; // samma som body
+}
+
+/* Layout runt cart + summary */
+.cart-layout {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+    align-items: flex-start;
+  }
+}
+
+/* ============================
+   CART CONTENT + TITEL
+============================ */
+
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: #1d2a38;
+  }
+}
+
+/* ============================
+   LISTA MED PRODUKTER
+============================ */
+
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-empty {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #ebdfd0;
+  color: #777;
+}
+
+/* ============================
+   CART ITEM CARD
+============================ */
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #ebdfd0;
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d2a38;
+  }
+
+  &__price {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+  &__controls {
+    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-size: 13px;
+  }
+
+  &__qty-btn {
+    border: none;
+    padding: 3px 10px;
+    border-radius: 999px;
+    cursor: pointer;
+    background: #0e161d;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  &__remove {
+    margin-left: 8px;
+    border: none;
+    background: transparent;
+    color: #c0392b;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+  }
+}
+
+/* Gör quantity-bubblan snygg */
+.cart-item__controls span {
+  min-width: 28px;
+  text-align: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f4f4f4;
+  font-weight: 500;
+}
+
+/* ============================
+   SUMMARY BOX
+============================ */
+
+#cartSummary {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px 20px;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #1d2a38;
+  }
+
+  p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+  // sista raden (totalt pris) lite tydligare
+  p:last-of-type {
+    font-weight: 600;
+    color: #1d2a38;
+  }
+}
+
+/* ============================
+   KNAPPAR UNDER SUMMARY
+============================ */
+
+.cart-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  button {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  #clearCartBtn {
+    background: #f2f2f2;
+    color: #555;
+  }
+
+  #checkoutBtn {
+    background: #ffb84d;
+    color: #333;
+    box-shadow: 0 6px 14px rgba(255, 184, 77, 0.4);
+  }
+
+  #clearCartBtn:disabled,
+  #checkoutBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+
+/* Hover-states på desktop */
+@media (hover: hover) {
+  .cart-actions #clearCartBtn:hover:not(:disabled) {
+    background: #e6e6e6;
+  }
+
+  .cart-actions #checkoutBtn:hover:not(:disabled) {
+    background: #ffa63a;
+    box-shadow: 0 10px 22px rgba(255, 184, 77, 0.45);
+    transform: translateY(-1px);
+  }
+}
+
+/* ============================
+   FOOTER PÅ CART-SIDAN
+============================ */
+
+.cart-page .footer {
+  margin-top: 32px; // liten luft, men hålls nere av flex-layouten
+}
+
+/* ============================
+   MOBIL-LAYOUT (≤ 768px)
+============================ */
+
+@media (max-width: 768px) {
+  .cart-layout {
+    margin: 24px auto 40px;
+    padding: 0 12px;
+    gap: 16px;
+  }
+
+  .cart-content h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  #cartItems {
+    gap: 10px;
+  }
+
+  .cart-item {
+    padding: 10px;
+    border-radius: 12px;
+
+    &__image {
+      width: 60px;
+      height: 60px;
+    }
+
+    &__name {
+      font-size: 14px;
+    }
+
+    &__price {
+      font-size: 13px;
+    }
+
+    &__controls {
+      font-size: 12px;
+      gap: 4px;
+    }
+  }
+
+  #cartSummary {
+    padding: 14px 14px 16px;
+    border-radius: 12px;
+
+    h2 {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .cart-actions {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .cart-page .footer {
+    margin-top: 24px;
+  }
+}
+
+/* ============================
+   MOBIL (≤ 375px)
+============================ */
+
+@media (max-width: 375px) {
+  .cart-layout {
+    margin: 20px auto 32px;
+    padding: 0 10px;
+    gap: 12px;
+  }
+
+  .cart-content h1 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .cart-item {
+    padding: 8px;
+    gap: 8px;
+
+    &__image {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__name {
+      font-size: 13px;
+    }
+
+    &__price {
+      font-size: 12px;
+    }
+
+    &__controls span {
+      font-size: 12px;
+    }
+
+    &__qty-btn {
+      padding: 3px 8px;
+      font-size: 11px;
+    }
+
+    &__remove {
+      font-size: 11px;
+    }
+  }
+
+  #cartSummary {
+    padding: 12px 12px 14px;
+
+    h2 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .cart-actions button {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}

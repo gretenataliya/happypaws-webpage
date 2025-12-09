@@ -6,7 +6,7 @@ export const products = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     category: "eat",
     price: 99,
-    isTopSeller: false,
+    isTopSeller: true,
   },
   {
     name: "Big Bones",

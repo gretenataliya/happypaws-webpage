@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Happy Paws</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="checkout-page">
+    <header class="site-header">
+  <div class="menu">
+    <!-- ÖVRE RAD: logo + search + cart -->
+    <div class="menu-row menu-row-top">
+      <!-- LOGO -->
+      <a href="index.html" class="logo-link">
+        <img
+          src="./src/assets/logos/startpage-logo.svg"
+          alt="Happy Paws logo"
+        />
+        <span>Happy Paws</span>
+      </a>
+
+      <!-- SEARCH – desktop -->
+      <form class="search-bar desktop-search">
+        <input
+          type="text"
+          placeholder="Search the shop"
+          aria-label="Search the shop"
+        />
+        <button type="submit" class="search-btn">
+          <img src="./src/assets/icons/search-icon.png" alt="search-icon" />
+        </button>
+      </form>
+
+      <!-- CART -->
+      <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+        <img src="./src/assets/icons/cart-icon.png" alt="cart-icon" />
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+
+    <!-- NEDRE RAD (mobil): hamburger + search -->
+    <div class="menu-row menu-row-bottom">
+      <!-- HAMBURGER (öppnar sidomenyn) -->
+      <label for="menu-toggle" class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- SEARCH – mobil -->
+      <form class="search-bar mobile-search">
+        <input
+          type="text"
+          placeholder="Search the shop"
+          aria-label="Search the shop"
+        />
+        <button type="submit" class="search-btn">
+          <img src="./src/assets/icons/search-icon.png" alt="search-icon" />
+        </button>
+      </form>
+    </div>
+
+    <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
+    <input
+      type="checkbox"
+      id="menu-toggle"
+      class="menu-toggle"
+      aria-label="Toggle navigation"
+    />
+
+    <!-- SIDOMENY (MOBIL) -->
+    <aside class="sidebar">
+      <label for="menu-toggle" class="sidebar-close-btn">✕</label>
+
+      <nav class="sidebar-nav">
+        <!-- PRODUCTS-grupp -->
+        <div class="sidebar-group">
+          <p class="sidebar-group-title">Products</p>
+          <a href="products.html">See all products</a>
+          <a href="walk.html">Walk</a>
+          <a href="eat.html">Eat</a>
+          <a href="sleep.html">Sleep</a>
+          <a href="play.html">Play</a>
+        </div>
+
+        <!-- ABOUT & CONTACT som är egna sektionstitlar -->
+        <a href="about.html" class="sidebar-section-link">About</a>
+        <a href="contact-us.html" class="sidebar-section-link">Contact Us</a>
+      </nav>
+    </aside>
+
+    <!-- MÖRK BAKGRUND BAKOM SIDOMENYN -->
+    <div class="menu-overlay"></div>
+  </div>
+
+  <!-- desktop naven -->
+  <nav class="main-nav">
+    <!-- Products med dropdown -->
+    <div class="nav-item has-submenu">
+      <a href="products.html" class="nav-link">Products</a>
+      <div class="nav-submenu">
+        <a href="products.html">See all products</a>
+        <a href="products.html#walk">Walk</a>
+        <a href="products.html#eat">Eat</a>
+        <a href="products.html#sleep">Sleep</a>
+        <a href="products.html#play">Play</a>
+      </div>
+    </div>
+
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact-us.html" class="nav-link">Contact Us</a>
+  </nav>
+</header>
+
+    <main>
+      <section class="checkout-wrapper">
+        <h1 class="checkout-title">Checkout</h1>
+
+        <div class="checkout-grid">
+          <!-- VÄNSTER: FORM -->
+          <form id="checkoutForm" class="checkout-card checkout-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                autocomplete="street-address"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="payment">Payment method</label>
+              <select id="payment" name="payment" required>
+                <option value="">Select a payment method</option>
+                <option value="credit-card">Credit card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank transfer</option>
+              </select>
+            </div>
+
+            <button type="submit" class="checkout-btn">Place order</button>
+          </form>
+
+          <!-- HÖGER: ORDER SUMMARY -->
+          <aside class="checkout-card checkout-summary">
+            <h2>Order summary</h2>
+
+            <div class="checkout-summary-row">
+              <span>Number of items</span>
+              <span id="checkoutItems">0</span>
+            </div>
+
+            <div class="checkout-summary-row checkout-summary-total">
+              <span>Total</span>
+              <span id="checkoutTotal">0 kr</span>
+            </div>
+
+            <p class="checkout-summary-note">
+              You will receive an email confirmation when your order is
+              completed.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footerInfo">
+        <h4>Information</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="footerInfo">
+        <h4>Customer Service</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>Delivery Information</li>
+          <li>Returns</li>
+        </ul>
+      </div>
+      <div class="footerInfo">
+        <h4>Follow Us Here!</h4>
+        <ul>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Pinterest</li>
+        </ul>
+      </div>
+      <p>© 2025 Happy Paws</p>
+    </footer>
+
+    <!-- Endast checkout-logik på denna sida -->
+    <script type="module" src="/src/assets/checkout/checkout.ts"></script>
+  </body>
+</html>
