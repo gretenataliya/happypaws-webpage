@@ -560,9 +560,13 @@ a {
 
 .productContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 2rem;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr;      
+  }
 }
 
 .topSellerCard {
@@ -589,6 +593,16 @@ a {
 .imgContainer > img {
   height: 200px;
   width: 200px;
+}
+
+/* Modal-styling */
+
+#modalBody {
+  display: flex;
+
+  .modalImg {
+    max-width: 100px;
+  }
 }
 
 /* Styling för Footer */
