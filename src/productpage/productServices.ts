@@ -1,4 +1,4 @@
-import type { Product } from "../models/product";
+import type { Product } from "../models/Product";
 
 // ------Visa produkter på product page:-------------------------------------
 export function renderProducts(products: Product[]) {
@@ -30,7 +30,7 @@ export function renderProducts(products: Product[]) {
         const modal = document.getElementById("modal");
         if (modal) {
           (modal as HTMLDialogElement).showModal();
-          createModal(product); // <--- Vart ska den ligga? Kan inte vara i loopen
+          createModal(product); //
         }
       });
     });
@@ -42,7 +42,7 @@ const createModal = (product: Product) => {
   const modalBody = document.getElementById("modalBody");
 
   if (modalBody) {
-    modalBody.innerHTML = ""; //  <--- Detta gör så bara sista produkten visas, varför??
+    modalBody.innerHTML = "";
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
     const textDiv = document.createElement("div");
