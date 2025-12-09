@@ -1,12 +1,16 @@
+// ============================
 // COLORS
+// ============================
 $bg-soft-beige: #fff7f0;
 $color-text-main: #2135478d;
 $color-accent: #ffd27f;
 $color-header-bg: #0e161d;
-$color-nav-bg: #1c2934;
+$color-nav-bg: #0e161dec;
 $color-button-accent: #ffb84d;
 
+// ============================
 // GLOBAL RESET
+// ============================
 *,
 *::before,
 *::after {
@@ -28,125 +32,15 @@ body {
   background-color: $bg-soft-beige;
   color: $color-text-main;
 }
-.logo-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-
-  img {
-    height: 70px;
-    width: auto;
-  }
-
-  span {
-    font-size: 22px;
-    font-weight: 500;
-    color: $color-accent;
-    letter-spacing: 0.25em;
-  }
-}
-.hero-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 360px;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px 18px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-
-  h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-
-  p {
-    font-size: 14px;
-    line-height: 1.4;
-    margin-bottom: 14px;
-    color: #555;
-  }
-
-  @media (min-width: 1200px) {
-    top: 48%;
-    bottom: auto;
-    left: 67%;
-    transform: translate(-50%, -50%);
-    max-width: 520px;
-    background: none;
-    box-shadow: none;
-    padding: 0;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    h1 {
-      font-size: 48px;
-      line-height: 1.25;
-      margin: 0;
-      color: #1d2a38;
-    }
-
-    p {
-      font-size: 20px;
-      line-height: 1.5;
-      color: #444;
-      margin: 0;
-      max-width: 420px;
-    }
-  }
-}
-.topSellerCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  border: 1px solid black;
-  border-radius: 5%;
-
-  h3,
-  h4 {
-    margin: 0;
-  }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  background-color: #fff7f0; /* soft beige */
-  color: #2135478d;
-}
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ======================================
-   HEADER + TOP BAR
-====================================== */
+// ============================
+// HEADER + TOP BAR
+// ============================
 
 .site-header {
   width: 100%;
@@ -154,7 +48,7 @@ a {
 
 /* hela topbaren */
 .menu {
-  background: #0e161d;
+  background: $color-header-bg;
   color: #fff;
   padding: 10px 32px;
   position: relative;
@@ -173,7 +67,7 @@ a {
 }
 
 .menu-row-bottom {
-  display: none; /* visas bara på mobil */
+  display: none; // visas bara på mobil
 }
 
 /* logo vänster */
@@ -182,18 +76,18 @@ a {
   align-items: center;
   gap: 10px;
   white-space: nowrap;
-}
 
-.logo-link img {
-  height: 70px;
-  width: auto;
-}
+  img {
+    height: 70px;
+    width: auto;
+  }
 
-.logo-link span {
-  font-size: 22px;
-  font-weight: 500;
-  color: #ffd27f;
-  letter-spacing: 0.25em;
+  span {
+    font-size: 22px;
+    font-weight: 500;
+    color: $color-accent;
+    letter-spacing: 0.25em;
+  }
 }
 
 /* SEARCH – gemensam stil (desktop + mobil) */
@@ -234,11 +128,11 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
 
-.search-btn img {
-  width: 36px;
-  height: 36px;
+  img {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* desktop-search  */
@@ -260,11 +154,11 @@ a {
   cursor: pointer;
   position: relative;
   margin-right: 20px;
-}
 
-.cart-btn img {
-  width: 36px;
-  height: 36px;
+  img {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .cart-count {
@@ -279,9 +173,9 @@ a {
   padding: 2px 5px;
 }
 
-/* HAMBUGER (bara struktur, visas på mobil) */
+/* HAMBURGER (bara struktur, visas på mobil) */
 .hamburger-menu {
-  display: none; /* desktop */
+  display: none; // desktop
 }
 
 /* checkbox som styr sidomenyn */
@@ -299,45 +193,95 @@ a {
   z-index: 90;
 }
 
-/* ======================================
-   DESKTOP CATEGORY NAV
-====================================== */
+// ============================
+// DESKTOP CATEGORY NAV
+// ============================
 
 .main-nav {
-  background: #1c2934;
+  background: $color-nav-bg;
   display: flex;
   justify-content: center;
-  gap: 40px;
-  padding: 15px 24px;
-  font-size: 14px;
+  gap: 100px;
+  height: 70px;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.20em;
 }
 
-.main-nav a {
+/* Gemensam stil för länkar i nav */
+.main-nav .nav-link,
+.main-nav > a {
   color: #ffffff;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
 }
 
-.main-nav a::after {
+/* Underline-animation för top level */
+.main-nav .nav-link::after,
+.main-nav > a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #ffd27f;
+  background: $color-accent;
   transition: width 0.2s ease;
 }
 
-.main-nav a:hover::after {
+.main-nav .nav-link:hover::after,
+.main-nav > a:hover::after {
   width: 100%;
 }
 
-/* ======================================
-   HERO
-====================================== */
+/* Wrapper för Products + submenu */
+.nav-item {
+  position: relative;
+}
+
+/* Dropdown-rutan */
+.nav-submenu {
+  position: absolute;
+  top: 110%;
+  right: -50%;
+  background: #0e161d;
+  border-radius: 14px;
+  padding: 15px 0;
+  min-width: 250px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: none;
+  z-index: 300;
+}
+
+/* Länkar i dropdown */
+.nav-submenu a {
+  display: block;
+  padding: 8px 18px;
+  font-size: 15px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Ingen underline på submenu */
+.nav-submenu a::after {
+  display: none;
+}
+
+/* Hover i dropdown */
+.nav-submenu a:hover {
+  background: rgba(255, 210, 127, 0.1);
+  color: $color-accent;
+}
+
+/* Visa dropdown på hover (desktop) */
+.has-submenu:hover .nav-submenu {
+  display: block;
+}
+
+//<!-- HERO --!>//
 
 .hero {
   position: relative;
@@ -351,7 +295,7 @@ a {
   display: block;
 }
 
-/* MOBIL */
+/* overlay – default (mobil-ish) */
 .hero-overlay {
   position: absolute;
   bottom: 20px;
@@ -359,59 +303,58 @@ a {
   transform: translateX(-50%);
   width: calc(100% - 40px);
   max-width: 360px;
-
   background-color: rgba(255, 255, 255, 0.95);
   padding: 20px 18px;
   border-radius: 18px;
   text-align: center;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-}
 
-.hero-overlay h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
 
-.hero-overlay p {
-  font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 14px;
-  color: #555;
+  p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    color: #555;
+  }
 }
 
 .hero-btn {
   display: inline-block;
   padding: 10px 24px;
   border-radius: 999px;
-  background-color: #ffb84d;
+  background-color: $color-button-accent;
   color: #333;
   font-weight: 600;
   font-size: 14px;
   box-shadow: 0 6px 14px rgba(255, 184, 77, 0.4);
   transition: transform 0.15s ease, box-shadow 0.15s ease,
     background-color 0.15s ease;
+
+  &:hover {
+    background-color: #ffa63a;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(255, 184, 77, 0.45);
+  }
 }
 
-.hero-btn:hover {
-  background-color: #ffa63a;
-  transform: translateY(-1px);
-  box-shadow: 0 10px 20px rgba(255, 184, 77, 0.45);
-}
-
-/* ======================================
-   FEATURED PRODUCTS - vi ändrar sen 
-====================================== */
+// ============================
+// FEATURED
+// ============================
 
 .featured {
   padding: 48px 16px 56px;
   text-align: center;
-}
 
-.featured h2 {
-  font-size: 20px;
-  margin-bottom: 16px;
+  h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
 }
 
 .featured-grid {
@@ -429,82 +372,140 @@ a {
   font-size: 14px;
 }
 
-/* ======================================
-   FOOTER - vi ändrar sen 
-====================================== */
+// ============================
+// TOP SELLER / POPULAR PRODUCTS
+// ============================
+
+#topSellerSection {
+  max-width: 1100px;
+  margin: 32px auto 48px;
+  padding: 0 16px;
+  text-align: center;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #555;
+  }
+}
+
+#topSellerContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* Själva kortet */
+.topSellerCard {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+
+  h3 {
+    margin: 6px 0 2px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    color: #777;
+  }
+}
+
+/* Bilden i kortet */
+.imgContainer {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+
+  img,
+  .productImg {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.productImg:hover {
+  transition: transform 0.4s ease;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+// ============================
+// FOOTER
+// ============================
 
 .footer {
-  padding: 16px;
-  text-align: center;
-  color: #888;
+  background-color: rgb(27, 26, 26);
+  color: #ffffff;
   font-size: 13px;
+  padding: 40px 60px 24px;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  margin-top: 80px;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  justify-items: center;
 }
 
-/* ======================================
-   DESKTOP HERO (Texten som är i vita bubblan ) 
-====================================== */
+.footerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
 
-@media (min-width: 1200px) {
+.footer h4 {
+  margin: 0;
+  color: rgb(228, 210, 165);
+}
 
-  .search-bar {
-    margin-left: 500px;   
-    margin-right: 1px;      
-    width: 400px;        
-  }
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  .hero-overlay {
-    top: 48%;
-    bottom: auto;
-    left: 67%;
-    transform: translate(-50%, -50%);
-    max-width: 520px;
+.footer p {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 16px 0 0;
+  margin-top: 28px;
+  color: rgb(228, 210, 165);
+}
 
-    background: none;
-    box-shadow: none;
-    padding: 0;
-
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .hero-overlay h1 {
-    font-size: 48px;
-    line-height: 1.25;
-    margin: 0;
-    color: #1d2a38;
-  }
-
-  .hero-overlay p {
-    font-size: 20px;
-    line-height: 1.5;
-    color: #444;
-    margin: 0;
-    max-width: 420px;
-  }
-
-  .hero-btn {
-    font-size: 16px;
-    padding: 14px 32px;
-    align-self: flex-start;
-    margin-top: 8px;
-  }
-
-  .featured {
-    padding: 64px 60px 56px;
-  }
-
-  .featured-grid {
-    grid-template-columns: repeat(3, 1fr);
+/* Mobilanpassning footer */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
     gap: 20px;
+    padding: 32px 20px 20px;
+    margin-top: 40px;
   }
 
+  .footerInfo {
+    align-items: center;
+    text-align: center;
+  }
 }
 
-/* ======================================
-   SIDEBAR (på mobil)
-====================================== */
+// ============================
+// SIDEBAR (mobil)
+// ============================
 
 .sidebar {
   position: fixed;
@@ -514,7 +515,7 @@ a {
   max-width: 280px;
   height: 100vh;
   background: #0f0d0d;
-  padding-top: 70px; 
+  padding-top: 70px;
   transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 250;
@@ -525,7 +526,7 @@ a {
   top: 16px;
   left: 16px;
   font-size: 32px;
-  color: #ffd27f;
+  color: $color-accent;
   cursor: pointer;
   z-index: 300;
 }
@@ -535,18 +536,48 @@ a {
   flex-direction: column;
 }
 
-.sidebar-nav a {
-  padding: 16px 20px;
-  font-size: 18px;
-  color: #ffffff;
+/* Products-grupp i mobilen */
+.sidebar-group {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 20px 8px;
+  gap: 4px;
 }
 
-.sidebar-nav a span {
-  color: #ffd27f;
+.sidebar-group-title {
+  font-size: 16px;
+  color: $color-accent;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin: 0 0 4px;
+}
+
+.sidebar-group a {
+  padding: 6px 0;
+  font-size: 14px;
+  color: #ffffff;
+  display: block;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+/* Övriga sektioner i sidebar (About, Contact) */
+.sidebar-section-link {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  display: block;
+
+  &:hover {
+    color: $color-accent;
+    background: rgba(255, 210, 127, 0.06);
+  }
 }
 
 /* checkbox styr sidebar + overlay */
@@ -558,129 +589,9 @@ a {
   display: block;
 }
 
-/* ======================================
-   MOBIL-LAYOUT
-====================================== */
-
-@media (max-width: 768px) {
-  /* main-nav under header göms på mobil */
-  .main-nav {
-    display: none;
-  }
-
-  /* visa nedre raden i headern (hamburger + search) */
-  .menu-row-bottom {
-    display: flex;
-    margin-top: 20px;
-    margin-left: 25px;
-    gap: 235px;
-  }
-
-  /* desktop-sök döljs på mobil */
-  .desktop-search {
-    display: none;
-  }
-
-  /* mobil-sök tar hela bredden bredvid hamburgaren */
-  .mobile-search {
-    flex: 1;
-  }
-
-  /* hamburger – synlig på mobil */
-  .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-
-  .hamburger-menu span {
-    width: 28px;
-    height: 4px;
-    background: #ffffff;
-    border-radius: 5px;
-  }
-
-  /* lyft upp hero-kortet lite på mobil */
-  .hero-overlay {
-    bottom: 30px;
-  }
-
-  .search-bar {
-    margin-right: 500px;
-    margin-left: -20px;
-  }
-
-
-}
-
-/* Styling för Top Seller-section */
-#topSellerSection {
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
-}
-
-#topSellerContainer {
- display: flex;
- justify-content: center;
-}
-
-.topSellerCard {
- display: flex;
- flex-direction: column;
- align-items: center;
- padding: 1rem;
- border: 1px solid black;
- border-radius: 5%;
-}
-.topSellerCard h3, h4 {
-  margin: 0;
-}
-.imgContainer {
-  overflow: hidden;
-  border-radius: 5%;
-}
-.productImg:hover {
-  transition: transform .5s ease;
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.imgContainer > img {
-  height: 200px;
-  width: 200px;
-}
-
-/* Styling för Footer */
-.footer {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: rgb(215, 212, 212);
-  margin-top: 1rem;
-}
-
-.footer h4 {
-  margin: 0;
-}
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footerInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: baseline;
-  margin: 1rem;
-}
-
-/* ============================
-   MINI CART DROPDOWN (DESKTOP)
-============================ */
+// ============================
+// MINI CART DROPDOWN (DESKTOP)
+// ============================
 
 .cart-wrapper {
   position: relative;
@@ -718,13 +629,13 @@ a {
   justify-content: space-between;
   padding-bottom: 4px;
   border-bottom: 1px solid #eee;
-}
 
-.mini-cart-header h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1d2a38;
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2a38;
+  }
 }
 
 .mini-cart-close {
@@ -732,7 +643,7 @@ a {
   background: transparent;
   font-size: 18px;
   cursor: pointer;
-  color: #ffb84d;
+  color: $color-button-accent;
 }
 
 /* items scrollbara om det blir många */
@@ -750,10 +661,10 @@ a {
   padding: 6px 0;
   border-bottom: 1px solid #f3f3f3;
   font-size: 13px;
-}
 
-.mini-cart-item:last-child {
-  border-bottom: none;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .mini-cart-item-name {
@@ -770,7 +681,7 @@ a {
   color: #555;
 }
 
-/* footer */
+/* footer i mini-cart */
 .mini-cart-footer {
   padding-top: 8px;
   border-top: 1px solid #eee;
@@ -793,15 +704,277 @@ a {
   text-align: center;
   padding: 8px 12px;
   border-radius: 999px;
-  background: #ffb84d;
+  background: $color-button-accent;
   color: #333;
   font-size: 13px;
   font-weight: 600;
 }
 
-/* mini-cart bara på desktop/lite större skärmar */
+/* mini-cart bara på mindre desktop uppåt */
 @media (max-width: 900px) {
   .mini-cart {
     display: none !important;
+  }
+}
+
+// ============================
+// DESKTOP HERO + FEATURED (≥1200px)
+// ============================
+
+@media (min-width: 1200px) {
+  .search-bar {
+    margin-left: 500px;
+    margin-right: 1px;
+    width: 400px;
+  }
+
+  .hero-overlay {
+    top: 48%;
+    bottom: auto;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    max-width: 520px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    h1 {
+      font-size: 48px;
+      line-height: 1.25;
+      margin: 0;
+      color: #1d2a38;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+      color: #444;
+      margin: 0;
+      max-width: 420px;
+    }
+  }
+
+  .hero-btn {
+    font-size: 16px;
+    padding: 14px 32px;
+    align-self: flex-start;
+    margin-top: 8px;
+  }
+
+  .featured {
+    padding: 64px 60px 56px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Desktop: toppsäljare 4 i rad */
+@media (min-width: 900px) {
+  #topSellerContainer {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+// ============================
+// MOBIL-LAYOUT (≤768px)
+// ============================
+
+@media (max-width: 768px) {
+  /* main-nav under header göms på mobil */
+  .main-nav {
+    display: none;
+  }
+
+  /* Göm sökfältet som ligger i övre raden (desktop-sök) */
+  .menu-row-top .search-bar,
+  .desktop-search {
+    display: none;
+  }
+
+  /* Nedre raden: hamburger + mobil-sök */
+  .menu-row-bottom {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-left: 0;
+    padding: 0 12px;
+    gap: 12px;
+    width: 100%;
+  }
+
+  /* Mobil-sök tar hela bredden bredvid hamburgaren */
+  .mobile-search {
+    flex: 1;
+  }
+
+  .search-bar {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Hamburger – synlig på mobil */
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    span {
+      width: 28px;
+      height: 4px;
+      background: #ffffff;
+      border-radius: 5px;
+    }
+  }
+
+  /* Hero på mobil – lite mindre overlay så man ser bilden */
+  .hero-overlay {
+    bottom: 20px;
+    width: calc(100% - 32px);
+    max-width: 320px;
+    padding: 14px 14px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+  }
+
+  .hero-btn {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+}
+
+// ============================
+// EXTRA MOBIL (≤375px)
+// ============================
+
+@media (max-width: 375px) {
+  /* Top-bar */
+  .menu {
+    padding: 8px 16px;
+  }
+
+  .menu-row-bottom {
+    gap: 20px !important;
+    margin-left: 4px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Logotypen mindre */
+  .logo-link img {
+    height: 48px;
+  }
+
+  .logo-link span {
+    font-size: 16px;
+    letter-spacing: 0.15em;
+  }
+
+  /* Searchbar mobil */
+  .search-bar {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100%;
+    max-width: none;
+    height: 34px;
+    padding: 2px 6px;
+  }
+
+  .search-bar input {
+    font-size: 12px;
+  }
+
+  .search-btn {
+    width: 28px;
+    height: 28px;
+
+    img {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  /* Cart-icon */
+  .cart-btn {
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .cart-count {
+    top: -5px;
+    right: -5px;
+    font-size: 9px;
+    padding: 2px 4px;
+  }
+
+  /* Sidebar nav links */
+  .sidebar-nav > a {
+    font-size: 16px;
+    padding: 14px 18px;
+  }
+
+  /* Footer mer kompakt */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 20px 10px;
+    text-align: center;
+    background-color: #1c1a13;
+    letter-spacing: 0.05em;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .footerInfo {
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .footer h4 {
+    font-size: 14px;
+    color: rgb(246, 236, 207);
+  }
+
+  .footer ul li {
+    font-size: 12px;
+  }
+
+  .footer p {
+    color: rgb(246, 236, 207);
+  }
+
+  /* Extra padding för toppsäljare på 375 */
+  #topSellerContainer {
+    padding: 0 12px 24px;
   }
 }

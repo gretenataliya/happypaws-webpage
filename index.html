@@ -8,13 +8,10 @@
   </head>
   <body>
     <header class="site-header">
-      <!-- =======================
-         TOP BAR
-    ======================== -->
       <div class="menu">
-        <!-- ÖVRE RAD (desktop + mobil): logo + search (desktop) + cart -->
+<!-- Den övre raden med cart -->
         <div class="menu-row menu-row-top">
-          <!-- LOGO -->
+<!-- LOGO -->
           <a href="index.html" class="logo-link">
             <img
               src="./src/assets/logos/startpage-logo.svg"
@@ -23,7 +20,7 @@
             <span>Happy Paws</span>
           </a>
 
-          <!-- SEARCH – desktop -->
+<!-- SEARCH – desktop -->
           <form class="search-bar desktop-search">
             <input
               type="text"
@@ -35,23 +32,24 @@
             </button>
           </form>
 
-          <!-- CART -->
-          <button class="cart-btn" aria-label="Shopping cart">
+<!-- CART -->
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
             <img src="./src/assets/icons/cart-icon.png" alt="cart-icon" />
-            <span class="cart-count">0</span>
-          </button>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
         </div>
 
-        <!-- NEDRE RAD (mobil): hamburger + search -->
+<!-- NEDRE RAD (mobil): hamburger + search -->
         <div class="menu-row menu-row-bottom">
           <!-- HAMBURGER (öppnar sidomenyn) -->
           <label for="menu-toggle" class="hamburger-menu">
             <span></span>
             <span></span>
             <span></span>
+            <span></span>
           </label>
 
-          <!-- SEARCH – mobil -->
+<!-- SEARCH – mobil -->
           <form class="search-bar mobile-search">
             <input
               type="text"
@@ -64,7 +62,7 @@
           </form>
         </div>
 
-        <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
+<!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
         <input
           type="checkbox"
           id="menu-toggle"
@@ -72,29 +70,50 @@
           aria-label="Toggle navigation"
         />
 
-        <!-- SIDOMENY (MOBIL) -->
+<!-- SIDOMENY (MOBIL) -->
         <aside class="sidebar">
           <label for="menu-toggle" class="sidebar-close-btn">✕</label>
 
-          <nav class="sidebar-nav">
-            <a href="products.html">Products <span>›</span></a>
-            <a href="about.html">About <span>›</span></a>
-            <a href="cart.html">Cart <span>›</span></a>
-          </nav>
+        <nav class="sidebar-nav">
+        <!-- PRODUCTS-grupp -->
+        <div class="sidebar-group">
+          <p class="sidebar-group-title">Products</p>
+          <a href="products.html">See all products</a>
+          <a href="walk.html">Walk</a>
+          <a href="eat.html">Eat</a>
+          <a href="sleep.html">Sleep</a>
+          <a href="play.html">Play</a>
+        </div>
+
+<!-- ABOUT & CONTACT som är egna sektionstitlar -->
+          <a href="about.html" class="sidebar-section-link">About</a>
+          <a href="contact-us.html" class="sidebar-section-link">Contact Us</a>
+        </nav>
         </aside>
 
         <!-- MÖRK BAKGRUND BAKOM SIDOMENYN -->
         <div class="menu-overlay"></div>
       </div>
 
-      <!-- DESKTOP-NAV UNDER HEADER -->
+<!-- DESKTOP-NAV UNDER HEADER -->
       <nav class="main-nav">
-        <a href="productPage.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="cart.html">Cart</a>
+        <!-- Products med dropdown -->
+        <div class="nav-item has-submenu">
+          <a href="products.html" class="nav-link">Products</a>
+          <div class="nav-submenu">
+            <a href="products.html">See all products</a>
+            <a href="products.html#walk">Walk</a>
+            <a href="products.html#eat">Eat</a>
+            <a href="products.html#sleep">Sleep</a>
+            <a href="products.html#play">Play</a>
+          </div>
+        </div>
+
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact-us.html" class="nav-link">Contact Us</a>
       </nav>
 
-      <!-- HERO -->
+<!-- HERO -->
       <div class="hero">
         <img
           src="./src/assets/startpage/startpage-header.png"
@@ -117,9 +136,6 @@
       <section class="featured" id="topSellerSection">
         <h2>Popular products</h2>
         <div class="featured-grid" id="topSellerContainer">
-          <!--           <div class="product-placeholder">Product 1</div>
-          <div class="product-placeholder">Product 2</div>
-          <div class="product-placeholder">Product 3</div> -->
         </div>
       </section>
     </main>
@@ -151,6 +167,8 @@
       </div>
       <p>© 2025 Happy Paws</p>
     </footer>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+
