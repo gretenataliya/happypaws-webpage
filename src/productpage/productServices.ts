@@ -49,6 +49,7 @@ const createModal = (product: Product) => {
     const name = document.createElement("h3");
     const description = document.createElement("p");
     const price = document.createElement("h4");
+    const cartBtn = document.createElement("button");
 
     name.innerHTML = product.name;
     price.innerHTML = product.price.toString() + " SEK";
@@ -56,11 +57,14 @@ const createModal = (product: Product) => {
     img.src = product.img;
     img.className = "modalImg";
     textDiv.className = "textDiv";
+    cartBtn.className = "cartBtn";
+    cartBtn.innerText = "Add to Cart";
 
     imgContainer.appendChild(img);
     textDiv.appendChild(name);
     textDiv.appendChild(description);
     textDiv.appendChild(price);
+    textDiv.appendChild(cartBtn);
     modalBody.appendChild(imgContainer);
     modalBody.appendChild(textDiv);
 

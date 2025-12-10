@@ -835,41 +835,63 @@ body .mini-cart-link {
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  background-color: #ffb84d;
+  color: #fff7f0;
 }
 #modal #modalBody {
   display: flex;
   flex-direction: column;
+  gap: 15px;
   padding: 10px;
 }
 @media (min-width: 800px) {
   #modal #modalBody {
     flex-direction: row;
-    gap: 15px;
-    padding: 5px;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px;
   }
 }
-#modal #modalBody h3 {
-  margin: 6px 0 2px;
+#modal #modalBody .textDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 300px;
+  margin: 10px;
+  gap: 20px;
+}
+@media (min-width: 800px) {
+  #modal #modalBody .textDiv {
+    padding: 10px 0px;
+  }
+}
+#modal #modalBody .textDiv h3 {
+  margin: 0;
   font-size: 20px;
   font-weight: 600;
   color: #333;
 }
-#modal #modalBody h4 {
+#modal #modalBody .textDiv h4 {
   margin: 0;
   font-size: 16px;
   font-weight: 500;
   color: #777;
 }
-#modal #modalBody p {
+#modal #modalBody .textDiv p {
   font-size: 14px;
   font-style: italic;
   color: #333;
+  margin: 0;
 }
-#modal #modalBody .textDiv {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 10px;
+#modal #modalBody .textDiv .cartBtn {
+  border-radius: 15px;
+  border: none;
+  width: 90px;
+  padding: 5px 5px;
+  cursor: pointer;
+  align-self: flex-end;
+  background-color: #ffb84d;
+  color: #fff7f0;
 }
 #modal #modalBody .modalImg {
   max-width: 300px;

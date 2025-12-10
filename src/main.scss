@@ -1008,44 +1008,66 @@ desktop-search
     border-radius: 50%;
     border: none;
     cursor: pointer;
+    background-color: $color-button-accent;
+    color: $bg-soft-beige;
     }
 
   #modalBody {
   display: flex;
   flex-direction: column;
+  gap: 15px;
   padding: 10px;
 
   @media (min-width: 800px) {
     flex-direction: row;
-    gap: 15px;
-    padding: 5px;
-  }
-
-  h3 {
-    margin: 6px 0 2px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-  }
-
-  h4 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 500;
-    color: #777;
-  }
-
-  p {
-    font-size: 14px;
-    font-style: italic;
-    color: #333;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px;
   }
 
   .textDiv {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     width: 300px;
-    padding: 10px;
+    margin: 10px;
+    gap: 20px;
+
+    @media (min-width: 800px) {
+    padding: 10px 0px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #777;
+    }
+
+    p {
+      font-size: 14px;
+      font-style: italic;
+      color: #333;
+      margin: 0;
+    }
+
+    .cartBtn {
+      border-radius: 15px;
+      border: none;
+      width: 90px;
+      padding: 5px 5px;
+      cursor: pointer;
+      align-self: flex-end;
+      background-color: $color-button-accent;
+      color: $bg-soft-beige;
+    }
 
   }
   .modalImg {
