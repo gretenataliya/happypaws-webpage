@@ -381,7 +381,7 @@ body .imgContainer .productImg {
   -o-object-fit: cover;
      object-fit: cover;
 }
-body .productImg:hover {
+body .topSellerCard:hover {
   transition: transform 0.4s ease;
   transform: scale(1.05);
   cursor: pointer;
