@@ -1,5 +1,6 @@
-import './main.scss';
+import "./main.scss";
 import { products } from "./assets/products";
+import { createModal } from "./productpage/productServices";
 
 // Visa TopSeller-produkter på landing page:
 const renderTopSellers = () => {
@@ -26,6 +27,14 @@ const renderTopSellers = () => {
         card.appendChild(name);
         card.appendChild(price);
         topSellerContainer.appendChild(card);
+
+        card.addEventListener("click", () => {
+          const modal = document.getElementById("modal");
+          if (modal) {
+            (modal as HTMLDialogElement).showModal();
+            createModal(product);
+          }
+        });
       }
     });
   }

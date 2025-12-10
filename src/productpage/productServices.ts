@@ -38,7 +38,7 @@ export function renderProducts(products: Product[]) {
 }
 
 // ------Visa modal på product page:-------------------------------------
-const createModal = (product: Product) => {
+export const createModal = (product: Product) => {
   const modalBody = document.getElementById("modalBody");
 
   if (modalBody) {
