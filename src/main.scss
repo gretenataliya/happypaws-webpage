@@ -990,3 +990,70 @@ desktop-search
   }
 }
 }
+
+
+/*----------------- MODAL-------------------- */
+
+#modal {
+  border-radius: 15px;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  max-width: 800px;
+  position: relative;
+
+  #closeModalBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    }
+
+  #modalBody {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    gap: 15px;
+    padding: 5px;
+  }
+
+  h3 {
+    margin: 6px 0 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+  }
+
+  p {
+    font-size: 14px;
+    font-style: italic;
+    color: #333;
+  }
+
+  .textDiv {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 10px;
+
+  }
+  .modalImg {
+    max-width: 300px;
+    border-radius: 15px;
+    border: 1px solid #ebdfd0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+    margin: 5px;
+    }
+  }
+}

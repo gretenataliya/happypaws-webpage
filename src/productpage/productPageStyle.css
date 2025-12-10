@@ -635,14 +635,6 @@ a {
   width: 200px;
 }
 
-/* Modal-styling */
-#modalBody {
-  display: flex;
-}
-#modalBody .modalImg {
-  max-width: 100px;
-}
-
 /* Styling för Footer */
 .footer {
   display: flex;

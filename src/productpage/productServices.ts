@@ -55,6 +55,7 @@ const createModal = (product: Product) => {
     description.innerHTML = product.description;
     img.src = product.img;
     img.className = "modalImg";
+    textDiv.className = "textDiv";
 
     imgContainer.appendChild(img);
     textDiv.appendChild(name);
@@ -62,12 +63,12 @@ const createModal = (product: Product) => {
     textDiv.appendChild(price);
     modalBody.appendChild(imgContainer);
     modalBody.appendChild(textDiv);
+
+    document.getElementById("closeModalBtn")?.addEventListener("click", () => {
+      const modal = document.getElementById("modal");
+      if (modal) {
+        (modal as HTMLDialogElement).close();
+      }
+    });
   }
 };
-
-document.getElementById("closeModalBtn")?.addEventListener("click", () => {
-  const modal = document.getElementById("modal");
-  if (modal) {
-    (modal as HTMLDialogElement).close();
-  }
-});
