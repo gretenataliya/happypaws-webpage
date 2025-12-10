@@ -838,6 +838,9 @@ body .mini-cart-link {
   background-color: #ffb84d;
   color: #fff7f0;
 }
+#modal #closeModalBtn:hover {
+  opacity: 0.8;
+}
 #modal #modalBody {
   display: flex;
   flex-direction: column;
@@ -892,6 +895,9 @@ body .mini-cart-link {
   align-self: flex-end;
   background-color: #ffb84d;
   color: #fff7f0;
+}
+#modal #modalBody .textDiv .cartBtn:hover {
+  opacity: 0.8;
 }
 #modal #modalBody .modalImg {
   max-width: 300px;

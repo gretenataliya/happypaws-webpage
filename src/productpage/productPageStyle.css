@@ -802,4 +802,32 @@ a {
   padding: 5px;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
-}/*# sourceMappingURL=productPageStyle.css.map */
+}
+.catBtnSection .catBtn:hover {
+  opacity: 0.8;
+}
+
+/* FILTER-KNAPPAR */
+/* input[type=checkbox] {
+	appearance: none;
+}
+
+label {
+	background-color: $color-button-accent;
+  color: white;
+  border: 3px solid $bg-soft-beige;
+  border-radius: 15px;
+  width: 90px;
+  padding: 0px 11px 2px 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+label:has(input[type=checkbox]:checked) {
+	background: #d88201;
+	color: #fff;
+}
+
+label:has(input[type=checkbox]:not(:checked)):hover {
+	 opacity: 0.5;
+} *//*# sourceMappingURL=productPageStyle.css.map */

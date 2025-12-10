@@ -1010,6 +1010,10 @@ desktop-search
     cursor: pointer;
     background-color: $color-button-accent;
     color: $bg-soft-beige;
+
+    &:hover {
+      opacity: 0.8;
+    }
     }
 
   #modalBody {
@@ -1067,6 +1071,10 @@ desktop-search
       align-self: flex-end;
       background-color: $color-button-accent;
       color: $bg-soft-beige;
+
+      &:hover {
+        opacity: 0.8;
+    }
     }
 
   }
