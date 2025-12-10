@@ -831,3 +831,23 @@ a {
     display: none !important;
   }
 }
+
+
+/* STYLING FÖR CAT-BUTTONS */
+
+.catBtnSection {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+
+  .catBtn {
+    background-color: $color-button-accent;
+    color: white;
+    border: 3px solid $bg-soft-beige;
+    border-radius: 20px;
+    width: 90px;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  }
+}

@@ -786,4 +786,20 @@ a {
   .mini-cart {
     display: none !important;
   }
+}
+/* STYLING FÖR CAT-BUTTONS */
+.catBtnSection {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+}
+.catBtnSection .catBtn {
+  background-color: #ffb84d;
+  color: white;
+  border: 3px solid #fff7f0;
+  border-radius: 20px;
+  width: 90px;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
 }/*# sourceMappingURL=productPageStyle.css.map */
