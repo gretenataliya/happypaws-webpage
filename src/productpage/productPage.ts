@@ -1,7 +1,7 @@
 import { products } from "../assets/products";
 import { renderProducts } from "./productServices";
 import "./productPageStyle.scss";
-import '.././main.scss';
+import ".././main.scss";
 
 //-----Category Buttons---------------------------------------------------
 

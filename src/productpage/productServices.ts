@@ -38,7 +38,7 @@ export function renderProducts(products: Product[]) {
 }
 
 // ------Visa modal på product page:-------------------------------------
-const createModal = (product: Product) => {
+export const createModal = (product: Product) => {
   const modalBody = document.getElementById("modalBody");
 
   if (modalBody) {
@@ -49,25 +49,30 @@ const createModal = (product: Product) => {
     const name = document.createElement("h3");
     const description = document.createElement("p");
     const price = document.createElement("h4");
+    const cartBtn = document.createElement("button");
 
     name.innerHTML = product.name;
     price.innerHTML = product.price.toString() + " SEK";
     description.innerHTML = product.description;
     img.src = product.img;
     img.className = "modalImg";
+    textDiv.className = "textDiv";
+    cartBtn.className = "cartBtn";
+    cartBtn.innerText = "Add to Cart";
 
     imgContainer.appendChild(img);
     textDiv.appendChild(name);
     textDiv.appendChild(description);
     textDiv.appendChild(price);
+    textDiv.appendChild(cartBtn);
     modalBody.appendChild(imgContainer);
     modalBody.appendChild(textDiv);
+
+    document.getElementById("closeModalBtn")?.addEventListener("click", () => {
+      const modal = document.getElementById("modal");
+      if (modal) {
+        (modal as HTMLDialogElement).close();
+      }
+    });
   }
 };
-
-document.getElementById("closeModalBtn")?.addEventListener("click", () => {
-  const modal = document.getElementById("modal");
-  if (modal) {
-    (modal as HTMLDialogElement).close();
-  }
-});

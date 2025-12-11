@@ -154,7 +154,7 @@ body {
      object-fit: cover;
 }
 
-.productImg:hover {
+.productCard:hover {
   transition: transform 0.4s ease;
   transform: scale(1.05);
   cursor: pointer;
@@ -624,7 +624,7 @@ a {
   border-radius: 5%;
 }
 
-.productImg:hover {
+.topSellerCard:hover {
   transition: transform 0.5s ease;
   transform: scale(1.1);
   cursor: pointer;
@@ -633,14 +633,6 @@ a {
 .imgContainer > img {
   height: 200px;
   width: 200px;
-}
-
-/* Modal-styling */
-#modalBody {
-  display: flex;
-}
-#modalBody .modalImg {
-  max-width: 100px;
 }
 
 /* Styling för Footer */
@@ -794,4 +786,48 @@ a {
   .mini-cart {
     display: none !important;
   }
-}/*# sourceMappingURL=productPageStyle.css.map */
+}
+/* STYLING FÖR CAT-BUTTONS */
+.catBtnSection {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+}
+.catBtnSection .catBtn {
+  background-color: #ffb84d;
+  color: white;
+  border: 3px solid #fff7f0;
+  border-radius: 20px;
+  width: 90px;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+.catBtnSection .catBtn:hover {
+  opacity: 0.8;
+}
+
+/* FILTER-KNAPPAR */
+/* input[type=checkbox] {
+	appearance: none;
+}
+
+label {
+	background-color: $color-button-accent;
+  color: white;
+  border: 3px solid $bg-soft-beige;
+  border-radius: 15px;
+  width: 90px;
+  padding: 0px 11px 2px 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+label:has(input[type=checkbox]:checked) {
+	background: #d88201;
+	color: #fff;
+}
+
+label:has(input[type=checkbox]:not(:checked)):hover {
+	 opacity: 0.5;
+} *//*# sourceMappingURL=productPageStyle.css.map */

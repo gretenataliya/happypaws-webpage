@@ -430,7 +430,7 @@ a {
   }
 }
 
-.productImg:hover {
+.topSellerCard:hover {
   transition: transform 0.4s ease;
   transform: scale(1.05);
   cursor: pointer;
@@ -976,94 +976,118 @@ a {
     align-items: center;
   }
 
+  .footer h4 {
+    font-size: 14px;
+    color: rgb(246, 236, 207);
+  }
+
+  .footer ul li {
+    font-size: 12px;
+  }
+
+  .footer p {
+    color: rgb(246, 236, 207);
+  }
+
+  /* Extra padding för toppsäljare på 375 */
   #topSellerContainer {
-    margin: 0 20px 260px;
-    padding: 20px;
-    gap: 18px;
+    padding: 0 12px 24px;
   }
 }
 
-/// Extra media query for small mobile devices (≤445px)
-@media (max-width: 445px) {
-  .hero {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding-bottom: 80px; // plats för knappen under bilden
-  }
 
-  .hero-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center top;
-  }
+/*----------------- MODAL-------------------- */
 
-  .hero-overlay {
-    top: 35%; // ungefär mitt i bubblan
-    left: 45%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    text-align: left;
-    background: none;
-    box-shadow: none;
-    padding: 0;
+#modal {
+  border-radius: 15px;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  max-width: 800px;
+  position: relative;
 
-    h1 {
-      font-size: 26px;
-      line-height: 1.3;
-      margin-bottom: 10px;
-    }
-
-    p {
-      left: 1%;
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 320px;
-    }
-  }
-
-  /* knapp under hunden – absolut mot hero */
-  .hero-btn {
+  #closeModalBtn {
     position: absolute;
-    left: 30%;
-    bottom: 10px;
-    transform: translateX(-50%);
-    transform: translateY(600%);
-    font-size: 15px;
-    padding: 11px 26px;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-color: $color-button-accent;
+    color: $bg-soft-beige;
+
+    &:hover {
+      opacity: 0.8;
+    }
+    }
+
+  #modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px;
   }
-}
 
-@media (max-width: 375px) {
-  .hero-overlay {
-    top: 35%; // ungefär mitt i bubblan
-    left: 45%;
-    transform: translate(-50%, -50%);
-    max-width: 100%;
-    text-align: left;
-    background: none;
-    box-shadow: none;
-    padding: 0;
+  .textDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 300px;
+    margin: 10px;
+    gap: 20px;
 
-    h1 {
-      font-size: 18px;
-      line-height: 1.3;
-      margin-bottom: 5px;
+    @media (min-width: 800px) {
+    padding: 10px 0px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #777;
     }
 
     p {
-      left: 1%;
-      font-size: 12px;
-      line-height: 1.5;
-      max-width: 320px;
+      font-size: 14px;
+      font-style: italic;
+      color: #333;
+      margin: 0;
+    }
+
+    .cartBtn {
+      border-radius: 15px;
+      border: none;
+      width: 90px;
+      padding: 5px 5px;
+      cursor: pointer;
+      align-self: flex-end;
+      background-color: $color-button-accent;
+      color: $bg-soft-beige;
+
+      &:hover {
+        opacity: 0.8;
+    }
+    }
+
+  }
+  .modalImg {
+    max-width: 300px;
+    border-radius: 15px;
+    border: 1px solid #ebdfd0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+    margin: 5px;
     }
   }
-
-  .hero-btn {
-    left: 30%;
-    transform: translateX(-50%);
-    transform: translateY(650%);
-  }
 }
-
