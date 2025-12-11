@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Paws – Contact</title>
+
+    <!-- 🐾 GLOBAL STYLES (meny, footer, hero osv) -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- SIDSPECIFIK STYLING FÖR KONTAKTSIDAN -->
+    <link rel="stylesheet" href="./src/contactpage/contactPageStyle.scss" />
+  </head>
+  <body>
+    <div class="menu">
+      <!-- ÖVRE RAD (desktop + mobil): logo + search (desktop) + cart -->
+      <div class="menu-row menu-row-top">
+        <!-- LOGO -->
+        <a href="index.html" class="logo-link">
+          <img
+            src="./src/assets/logos/startpage-logo.svg"
+            alt="Happy Paws logo"
+          />
+          <span>Happy Paws</span>
+        </a>
+
+        <!-- SEARCH – desktop -->
+        <form class="search-bar desktop-search">
+          <input
+            type="text"
+            placeholder="Search the shop"
+            aria-label="Search the shop"
+          />
+          <button type="submit" class="search-btn">
+            <img src="./src/assets/icons/search-icon.png" alt="search-icon" />
+          </button>
+        </form>
+
+        <!-- CART -->
+        <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+          <img src="./src/assets/icons/cart-icon.png" alt="cart-icon" />
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+
+      <!-- NEDRE RAD (mobil): hamburger + search -->
+      <div class="menu-row menu-row-bottom">
+        <!-- HAMBURGER (öppnar sidomenyn) -->
+        <label for="menu-toggle" class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <!-- SEARCH – mobil -->
+        <form class="search-bar mobile-search">
+          <input
+            type="text"
+            placeholder="Search the shop"
+            aria-label="Search the shop"
+          />
+          <button type="submit" class="search-btn">
+            <img src="./src/assets/icons/search-icon.png" alt="search-icon" />
+          </button>
+        </form>
+      </div>
+
+      <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
+      <input
+        type="checkbox"
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+      />
+
+      <!-- SIDOMENY (MOBIL) -->
+      <aside class="sidebar">
+        <label for="menu-toggle" class="sidebar-close-btn">✕</label>
+
+        <nav class="sidebar-nav">
+          <!-- PRODUCTS-grupp -->
+          <div class="sidebar-group">
+            <p class="sidebar-group-title">Products</p>
+            <a href="productPage.html">See all products</a>
+            <a href="walk.html">Walk</a>
+            <a href="eat.html">Eat</a>
+            <a href="sleep.html">Sleep</a>
+            <a href="play.html">Play</a>
+          </div>
+
+          <!-- ABOUT & CONTACT som egna sektionstitlar -->
+          <a href="about.html" class="sidebar-section-link">About</a>
+          <a href="contact-us.html" class="sidebar-section-link">Contact Us</a>
+        </nav>
+      </aside>
+
+      <!-- MÖRK BAKGRUND BAKOM SIDOMENYN -->
+      <div class="menu-overlay"></div>
+    </div>
+
+    <!-- DESKTOP-NAV UNDER HEADER -->
+    <nav class="main-nav">
+      <!-- Products med dropdown -->
+      <div class="nav-item has-submenu">
+        <a href="productPage.html" class="nav-link">Products</a>
+        <div class="nav-submenu">
+          <a href="productPage.html">See all products</a>
+          <a href="productPage.html#walk">Walk</a>
+          <a href="productPage.html#eat">Eat</a>
+          <a href="productPage.html#sleep">Sleep</a>
+          <a href="productPage.html#play">Play</a>
+        </div>
+      </div>
+
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact-us.html" class="nav-link">Contact Us</a>
+    </nav>
+
+    <!-- MAIN -->
+    <main>
+      <section id="contactSection">
+        <h2>Contact Us</h2>
+        <h4>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui ratione
+          nobis nulla officia in accusamus debitis repellat maxime dolore, rerum
+          at hic reprehenderit, voluptatem pariatur, placeat provident nisi
+          consectetur similique.
+        </h4>
+        <form>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            class="contact-form"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            class="contact-form"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            id="message-box"
+            required
+          ></textarea>
+          <button>Submit</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footerInfo">
+        <h4>Information</h4>
+        <ul>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+      <div class="footerInfo">
+        <h4>Customer Service</h4>
+        <ul>
+          <li>FAQ</li>
+          <li>Delivery Information</li>
+          <li>Returns</li>
+        </ul>
+      </div>
+      <div class="footerInfo">
+        <h4>Follow Us Here!</h4>
+        <ul>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Pinterest</li>
+        </ul>
+      </div>
+      <p>© 2025 Happy Paws</p>
+    </footer>
+
+    <!-- HENNES SCRIPT -->
+    <script type="module" src="/src/productpage/productPage.ts"></script>
+  </body>
+</html>
