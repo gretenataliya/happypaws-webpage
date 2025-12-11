@@ -115,26 +115,34 @@
 
 <!-- HERO -->
       <div class="hero">
-        <img
-          src="./src/assets/startpage/startpage-header.png"
-          alt="Happy Paws dog banner"
-          class="hero-image"
-        />
+  <picture class="hero-picture">
+    <!-- Mobilbild (max 768px) -->
+    <source
+      srcset="./src/assets/startpage/mobile-startpage-header.png"
+      media="(max-width: 900px)"
+    />
+    <!-- Standard / desktop-bild -->
+    <img
+      src="./src/assets/startpage/startpage-header.png"
+      alt="Happy Paws dog banner"
+      class="hero-image"
+    />
+  </picture>
 
-        <div class="hero-overlay">
-          <h1>Spoil your dog with the little things they love</h1>
-          <p>
-            Happy walks, cozy naps and little tail wags start with the right
-            treats and toys.
-          </p>
-          <a href="productPage.html" class="hero-btn">Shop now</a>
-        </div>
-      </div>
-    </header>
+  <div class="hero-overlay">
+    <h1>Spoil your dog with the little things they love</h1>
+    <p>
+      Happy walks, cozy naps and little tail wags start with the right
+      treats and toys.
+    </p>
+    <a href="productPage.html" class="hero-btn">Shop now</a>
+  </div>
+</div>
+
 
     <main>
       <section class="featured" id="topSellerSection">
-        <h2>Popular products</h2>
+        <h2>Our most popular products</h2>
         <div class="featured-grid" id="topSellerContainer">
         </div>
       </section>

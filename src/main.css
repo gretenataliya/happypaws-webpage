@@ -733,9 +733,7 @@ desktop-search .desktop-search {
   /* Nedre raden: hamburger + mobil-sök */
   .menu-row-bottom {
     display: flex;
-    align-items: center;
-    margin-top: 16px;
-    margin-left: 0;
+    justify-content: center;
     padding: 0 12px;
     gap: 12px;
     width: 100%;

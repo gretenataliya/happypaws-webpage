@@ -1,3 +1,7 @@
+/* ============================
+   BASE LAYOUT
+============================ */
+
 html,
 body {
   height: 100%;
@@ -6,7 +10,7 @@ body {
 body.checkout-page {
   display: flex;
   flex-direction: column;
-  background-color: #fff7f0; 
+  background-color: #fff7f0;
 }
 
 .checkout-page main {
@@ -14,10 +18,18 @@ body.checkout-page {
   padding: 40px 16px 60px;
 }
 
+/* Wrapper runt allt innehåll */
+
 .checkout-wrapper {
   max-width: 1000px;
   margin: 0 auto;
-/// Sajt titel
+  margin-bottom: 300px;
+}
+
+/* ============================
+   TITLE + GRID
+============================ */
+
 .checkout-title {
   font-size: 24px;
   font-weight: 600;
@@ -25,14 +37,14 @@ body.checkout-page {
   color: #1d2a38;
 }
 
-//// Grid: formulär + order summary 
 .checkout-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
   gap: 24px;
 }
 
-/// Kort-stilen
+/* Kort-stilen */
+
 .checkout-card {
   background: #ffffff;
   border-radius: 16px;
@@ -41,8 +53,9 @@ body.checkout-page {
   padding: 22px 20px 24px;
 }
 
-/// Formulär - KUNDUPPGIFTER //
-
+/* ============================
+   FORM – KUNDUPPGIFTER
+============================ */
 
 .checkout-form {
   display: flex;
@@ -78,7 +91,10 @@ body.checkout-page {
   box-shadow: 0 0 0 1px rgba(255, 184, 77, 0.4);
 }
 
-//// Checkout-knapp ////
+/* ============================
+   CHECKOUT-KNAPP
+============================ */
+
 .checkout-btn {
   margin-top: 8px;
   padding: 11px 18px;
@@ -101,7 +117,9 @@ body.checkout-page {
   }
 }
 
-////ORDER SUMMARY ////
+/* ============================
+   ORDER SUMMARY
+============================ */
 
 .checkout-summary {
   display: flex;
@@ -135,13 +153,17 @@ body.checkout-page {
   color: #777;
 }
 
-//// FOOTER PÅ CHECKOUT-SIDAN ////
+/* ============================
+   FOOTER PÅ CHECKOUT-SIDAN
+============================ */
 
 .checkout-page .footer {
   margin-top: 0;
 }
 
-//// RESPONSIV DESIGN ////
+/* ============================
+   RESPONSIV DESIGN
+============================ */
 
 @media (max-width: 768px) {
   .checkout-page main {
@@ -162,8 +184,6 @@ body.checkout-page {
     padding: 18px 16px 20px;
   }
 }
-
-//// MOBIL (375px) ////
 
 @media (max-width: 375px) {
   .checkout-page main {
@@ -188,7 +208,9 @@ body.checkout-page {
   }
 }
 
-//// ORDER POPUP STIL ////
+/* ============================
+   ORDER POPUP
+============================ */
 
 .checkout-popup-overlay {
   position: fixed;
@@ -197,7 +219,7 @@ body.checkout-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 2000; // över allt, även footer
 }
 
 .checkout-popup {
@@ -270,7 +292,7 @@ body.checkout-page {
   color: #888;
 }
 
-//// ANIMATION FOR PAW ICON ////
+/* Animation för tass-ikonen */
 @keyframes wag-tail {
   0% {
     transform: rotate(0deg);
@@ -287,5 +309,4 @@ body.checkout-page {
   100% {
     transform: rotate(0deg);
   }
- }
 }
