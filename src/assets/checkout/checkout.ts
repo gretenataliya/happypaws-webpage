@@ -1,61 +1,61 @@
 import '../../main.scss';
 import './checkout.scss';
+import { getCart, updateCartCount } from "../cart/cartService";
+import type { CartItem } from "../cart/cartService";
 
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  image?: string;
-  quantity: number;
-}
-
-const CART_KEY = 'happyPawsCart';
-
-function loadCart(): CartItem[] {
-  try {
-    const data = localStorage.getItem(CART_KEY);
-    if (!data) return [];
-    return JSON.parse(data) as CartItem[];
-  } catch {
-    return [];
-  }
-}
+const CART_KEY = "happyPawsCart";
 
 function getTotals(cart: CartItem[]): { totalItems: number; totalPrice: number } {
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return { totalItems, totalPrice };
 }
 
-function updateBadge(totalItems: number): void {
-  const cartBadge = document.getElementById('cartCount') as HTMLElement | null;
-  if (!cartBadge) return;
-  cartBadge.textContent = totalItems.toString();
-}
-
 function renderSummary(): void {
-  const itemsSpan = document.getElementById('checkoutItems') as HTMLElement | null;
-  const totalSpan = document.getElementById('checkoutTotal') as HTMLElement | null;
+  const itemsSpan = document.getElementById("checkoutItems") as HTMLElement | null;
+  const totalSpan = document.getElementById("checkoutTotal") as HTMLElement | null;
+  const listDiv = document.getElementById("checkoutList") as HTMLElement | null;
 
-  const cart = loadCart();
-  const { totalItems, totalPrice } = getTotals(cart);
+  const cart = getCart();
+
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   if (itemsSpan) itemsSpan.textContent = totalItems.toString();
   if (totalSpan) totalSpan.textContent = `${totalPrice} kr`;
 
-  updateBadge(totalItems);
+  // Render product list
+  if (listDiv) {
+    if (cart.length === 0) {
+      listDiv.innerHTML = `<p class="checkout-empty">Your cart is empty.</p>`;
+    } else {
+      listDiv.innerHTML = cart
+        .map((item) => {
+          const imgUrl = item.img ?? "/placeholder.jpg";
+          const lineTotal = item.price * item.quantity;
+
+          return `
+            <div class="checkout-item">
+              <img class="checkout-item__img" src="${imgUrl}" alt="${item.name}" />
+              <div class="checkout-item__info">
+                <div class="checkout-item__name">${item.name}</div>
+                <div class="checkout-item_meta">${item.quantity} x ${item.price} kr</div>
+              </div>
+              <div class="checkout-item__total">${lineTotal} kr</div>
+            </div>
+          `;
+        })
+        .join("");
+    }
+  }
+
+  // uppdaterar cart-badgen i headern
+  updateCartCount();
 }
 
-function showCheckoutPopup(
-  name: string,
-  totalItems: number,
-  totalPrice: number
-): void {
-  const overlay = document.createElement('div');
-  overlay.className = 'checkout-popup-overlay';
+function showCheckoutPopup(name: string, totalItems: number, totalPrice: number): void {
+  const overlay = document.createElement("div");
+  overlay.className = "checkout-popup-overlay";
 
   overlay.innerHTML = `
     <div class="checkout-popup">
@@ -81,87 +81,61 @@ function showCheckoutPopup(
 
   document.body.appendChild(overlay);
 
-  const buttons = overlay.querySelectorAll<HTMLButtonElement>(
-    '.checkout-popup__btn'
-  );
+  const buttons = overlay.querySelectorAll<HTMLButtonElement>(".checkout-popup__btn");
 
   buttons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener("click", () => {
       const action = btn.dataset.action;
-      if (action === 'home') {
-        window.location.href = 'index.html';
-      } else {
-        document.body.removeChild(overlay);
+
+      if (action === "home") {
+        window.location.href = "index.html";
+        return;
       }
+
+      document.body.removeChild(overlay);
     });
   });
 }
 
 function initCheckout(): void {
-  const form = document.getElementById('checkoutForm') as HTMLFormElement | null;
+  // Sätt badge direkt när sidan laddas
+  updateCartCount();
 
-  // Fyll på med test-data om cart är tom (bara för nu innan merge)
-  seedTestCartForDev();
-
+  // Rendera totals direkt
   renderSummary();
 
+  const form = document.getElementById("checkoutForm") as HTMLFormElement | null;
   if (!form) return;
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const cart = loadCart();
+    const cart = getCart();
     const { totalItems, totalPrice } = getTotals(cart);
 
     if (cart.length === 0 || totalItems === 0) {
-      alert('Your cart is empty. Please add some products before checkout.');
+      alert("Your cart is empty. Please add some products before checkout.");
       return;
     }
 
-    const nameInput = document.getElementById('name') as HTMLInputElement | null;
-    const name = (nameInput?.value.trim() || 'friend').split(' ')[0];
+    const nameInput = document.getElementById("name") as HTMLInputElement | null;
+    const name = (nameInput?.value.trim() || "friend").split(" ")[0];
 
-    // töm vagnen
+    // Töm vagnen (samma key som i cartService)
     localStorage.removeItem(CART_KEY);
 
-    // uppdatera UI
+    // Uppdatera UI
     renderSummary();
 
-    // resetta formuläret
+    // Resetta formuläret
     form.reset();
 
-    // visa waggy tail popup
+    // Popup
     showCheckoutPopup(name, totalItems, totalPrice);
   });
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   initCheckout();
 });
-
-function seedTestCartForDev(): void {
-  const currentCart = loadCart();
-  if (currentCart.length > 0) {
-    // Om något redan ligger i cart (senare från product-sidan), gör inget.
-    return;
-  }
-
-  const testCart: CartItem[] = [
-    {
-      id: 'test-1',
-      name: 'Chewy Test Bone',
-      price: 149,
-      quantity: 1,
-    },
-    {
-      id: 'test-2',
-      name: 'Plush Fox (Test)',
-      price: 199,
-      quantity: 2,
-    },
-  ];
-
-  localStorage.setItem(CART_KEY, JSON.stringify(testCart));
-}
 

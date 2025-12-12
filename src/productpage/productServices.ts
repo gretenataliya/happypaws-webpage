@@ -1,4 +1,6 @@
 import type { Product } from "../models/Product";
+import { addToCart } from "../assets/cart/cartService";
+
 
 // ------Visa produkter på product page:-------------------------------------
 export function renderProducts(products: Product[]) {
@@ -59,6 +61,9 @@ export const createModal = (product: Product) => {
     textDiv.className = "textDiv";
     cartBtn.className = "cartBtn";
     cartBtn.innerText = "Add to Cart";
+    cartBtn.addEventListener("click", () => {
+    addToCart(product);
+ });
 
     imgContainer.appendChild(img);
     textDiv.appendChild(name);

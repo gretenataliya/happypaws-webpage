@@ -153,6 +153,56 @@ body.checkout-page {
   color: #777;
 }
 
+.checkout-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 12px 0 16px;
+}
+
+.checkout-item {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(160, 136, 107, 0.25);
+}
+
+.checkout-item__img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(160, 136, 107, 0.25);
+}
+
+.checkout-item__name {
+  font-weight: 600;
+  color: #213547;
+  font-size: 14px;
+}
+
+.checkout-item__meta {
+  font-size: 12px;
+  color: rgba(21, 23, 58, 0.7);
+}
+
+.checkout-item__total {
+  font-weight: 600;
+  font-size: 13px;
+  color: #213547;
+  white-space: nowrap;
+}
+
+.checkout-empty {
+  font-size: 13px;
+  color: rgba(21, 23, 58, 0.7);
+}
+
+
 /* ============================
    FOOTER PÅ CHECKOUT-SIDAN
 ============================ */
@@ -176,8 +226,16 @@ body.checkout-page {
   }
 
   .checkout-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkout-summary {
+    order: -1;
+  }
+
+  .checkout-form {
+    order: 1;
   }
 
   .checkout-card {

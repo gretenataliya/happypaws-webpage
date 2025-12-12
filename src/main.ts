@@ -1,6 +1,10 @@
 import "./main.scss";
 import { products } from "./assets/products";
 import { createModal } from "./productpage/productServices";
+import { updateCartCount } from "../src/assets/cart/cartService";
+
+updateCartCount();
+
 
 // Visa TopSeller-produkter på landing page:
 const renderTopSellers = () => {
