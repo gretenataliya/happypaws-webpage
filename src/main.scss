@@ -96,56 +96,6 @@ a {
   }
 }
 
-/* SEARCH – gemensam stil (desktop + mobil) */
-.search-bar {
-  max-width: 400px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  background: #f3f3f3;
-  border-radius: 999px;
-  padding: 4px;
-}
-
-.search-bar input {
-  flex: 1;
-  border: none;
-  outline: none;
-  padding: 8px 8px;
-  border-radius: 999px;
-  font-size: 14px;
-  background: transparent;
-
-  &::placeholder {
-    color: #999;
-  }
-}
-
-.search-btn {
-  border: none;
-  background: #ffffff;
-  border-radius: 999px;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  img {
-    width: 36px;
-    height: 36px;
-  }
-}
-
-/* Desktop search */
-.desktop-search {
-  flex: 1;
-  margin: 0 40px;
-}
-
 /* CART */
 .cart-btn {
   border-radius: 999px;
@@ -702,12 +652,6 @@ a {
 
 // DESKTOP EXTRA LARGE (≥1200px)
 @media (min-width: 1200px) {
-  .search-bar {
-    margin-left: 500px;
-    margin-right: 1px;
-    width: 400px;
-  }
-
   .hero-image {
     transform: translateY(-100px);
   }
@@ -760,16 +704,6 @@ a {
     padding: 0 8px;
     gap: 12px;
     width: 100%;
-  }
-
-  .mobile-search {
-    flex: 1;
-  }
-
-  .search-bar {
-    margin: 0;
-    width: 100%;
-    max-width: none;
   }
 
   .hamburger-menu {
@@ -873,25 +807,6 @@ a {
   .logo-link span {
     font-size: 16px;
     letter-spacing: 0.15em;
-  }
-
-  .search-bar {
-    height: 34px;
-    padding: 2px 6px;
-  }
-
-  .search-bar input {
-    font-size: 12px;
-  }
-
-  .search-btn {
-    width: 28px;
-    height: 28px;
-
-    img {
-      width: 26px;
-      height: 26px;
-    }
   }
 
   .cart-btn {
