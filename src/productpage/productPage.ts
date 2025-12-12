@@ -1,5 +1,6 @@
-import ".././main.scss";
-import "../productpage/productPageStyle.scss";
+import "../main.scss";
+import "./productPageStyle.scss";
+
 import { products } from "../assets/products";
 import { renderProducts } from "./productServices";
 import { updateCartCount } from "../assets/cart/cartService";
@@ -9,74 +10,80 @@ type Category = "all" | "eat" | "sleep" | "walk" | "play";
 let activeCategory: Category = "all";
 let searchTerm = "";
 
-/* 🔹 CENTRAL FILTER FUNCTION */
+// ---------- Helpers ----------
+function getCategoryFromUrl(): Category | null {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get("category")?.toLowerCase();
+
+  const allowed: Category[] = ["all", "eat", "sleep", "walk", "play"];
+  if (!cat) return null;
+  if (allowed.includes(cat as Category)) return cat as Category;
+
+  return null;
+}
+
+function updateUrlCategory(category: Category) {
+  const url = new URL(window.location.href);
+  url.searchParams.set("category", category);
+  window.history.replaceState({}, "", url.toString());
+}
+
+function setActiveCategoryButton(category: Category) {
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".catBtn");
+  buttons.forEach((btn) => {
+    const btnCat = (btn.dataset.category || "") as Category;
+    btn.classList.toggle("is-active", btnCat === category);
+  });
+}
+
+// ---------- Filtering ----------
 function getFilteredProducts() {
   let result = [...products];
 
-  // Category filter
   if (activeCategory !== "all") {
-    result = result.filter(
-      (product) => product.category === activeCategory
-    );
+    result = result.filter((p) => p.category === activeCategory);
   }
 
-  // Search filter
   if (searchTerm.trim() !== "") {
     const term = searchTerm.toLowerCase();
     result = result.filter(
-      (product) =>
-        product.name.toLowerCase().includes(term) ||
-        product.description?.toLowerCase().includes(term)
+      (p) =>
+        p.name.toLowerCase().includes(term) ||
+        (p.description ?? "").toLowerCase().includes(term)
     );
   }
 
   return result;
 }
 
-/* 🔹 ONLY place renderProducts is called */
 function applyFilters() {
-  const filtered = getFilteredProducts();
-  renderProducts(filtered);
+  renderProducts(getFilteredProducts());
 }
 
-/* 🔹 Category buttons */
+// ---------- Init buttons ----------
 function initCategoryButtons() {
-  document.getElementById("allBtn")?.addEventListener("click", () => {
-    activeCategory = "all";
-    applyFilters();
-  });
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".catBtn");
 
-  document.getElementById("eatBtn")?.addEventListener("click", () => {
-    activeCategory = "eat";
-    applyFilters();
-  });
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const category = (btn.dataset.category || "all") as Category;
 
-  document.getElementById("sleepBtn")?.addEventListener("click", () => {
-    activeCategory = "sleep";
-    applyFilters();
-  });
+      activeCategory = category;
+      setActiveCategoryButton(category);
+      updateUrlCategory(category);
 
-  document.getElementById("walkBtn")?.addEventListener("click", () => {
-    activeCategory = "walk";
-    applyFilters();
-  });
-
-  document.getElementById("playBtn")?.addEventListener("click", () => {
-    activeCategory = "play";
-    applyFilters();
+      applyFilters();
+    });
   });
 }
 
-/* 🔹 Search */
+// ---------- Init search ----------
 function initSearch() {
   const input = document.getElementById(
     "productSearchInput"
   ) as HTMLInputElement | null;
 
-  if (!input) {
-    console.warn("Search input not found");
-    return;
-  }
+  if (!input) return;
 
   input.addEventListener("input", () => {
     searchTerm = input.value;
@@ -84,10 +91,22 @@ function initSearch() {
   });
 }
 
-/* 🔹 INIT */
+// ---------- Init from URL ----------
+function initCategoryFromUrl() {
+  const fromUrl = getCategoryFromUrl();
+  if (!fromUrl) return;
+
+  activeCategory = fromUrl;
+  setActiveCategoryButton(fromUrl);
+}
+
+// ---------- DOM Ready ----------
 document.addEventListener("DOMContentLoaded", () => {
   updateCartCount();
+
   initCategoryButtons();
   initSearch();
-  applyFilters(); // FIRST render
+
+  initCategoryFromUrl();
+  applyFilters();
 });

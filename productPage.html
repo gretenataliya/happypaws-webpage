@@ -46,11 +46,12 @@
         <nav class="sidebar-nav">
           <div class="sidebar-group">
             <p class="sidebar-group-title">Products</p>
+            <a href="productPage.html?category=eat">Eat</a>
+            <a href="productPage.html?category=walk">Walk</a>
+            <a href="productPage.html?category=sleep">Sleep</a>
+            <a href="productPage.html?category=play">Play</a>
             <a href="productPage.html">See all products</a>
-            <a href="walk.html">Walk</a>
-            <a href="eat.html">Eat</a>
-            <a href="sleep.html">Sleep</a>
-            <a href="play.html">Play</a>
+
           </div>
 
           <a href="about.html" class="sidebar-section-link">About</a>
@@ -70,12 +71,12 @@
     <!-- PRODUCT PAGE CONTENT -->
     <main>
       <section class="productSection" id="productSection">
-        <div class="catBtnSection">
-          <button class="catBtn" id="allBtn" type="button">All Products</button>
-          <button class="catBtn" id="eatBtn" type="button">Eat</button>
-          <button class="catBtn" id="sleepBtn" type="button">Sleep</button>
-          <button class="catBtn" id="walkBtn" type="button">Walk</button>
-          <button class="catBtn" id="playBtn" type="button">Play</button>
+        <div class="catBtnSection" id="categories">
+          <button class="catBtn" id="allBtn" data-category="all" type="button">All Products</button>
+          <button class="catBtn" id="eatBtn" data-category="eat" type="button">Eat</button>
+          <button class="catBtn" id="sleepBtn" data-category="sleep" type="button">Sleep</button>
+          <button class="catBtn" id="walkBtn" data-category="walk" type="button">Walk</button>
+          <button class="catBtn" id="playBtn" data-category="play" type="button">Play</button>
         </div>
          <!-- Searchbar moved here -->
         <div class="product-search">

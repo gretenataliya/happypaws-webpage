@@ -88,6 +88,12 @@ $product-border: rgba(160, 136, 107, 0.3);
   opacity: 0.88;
 }
 
+.catBtn.is-active {
+  background: #d88201;
+  color: #fff;
+}
+
+
 /* Product grid wrapper */
 #productContainer {
   width: min(920px, calc(100% - 40px));
