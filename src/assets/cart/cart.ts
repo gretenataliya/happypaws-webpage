@@ -83,7 +83,7 @@ function renderCart(): void {
     article.dataset.id = item.id;
 
     // item.img finns i Product (din products-lista använder "img")
-    const imageUrl = item.img ?? "/placeholder.jpg";
+    const imageUrl = item.image ?? "/placeholder.jpg";
 
     article.innerHTML = `
       <img

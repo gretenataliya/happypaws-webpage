@@ -31,7 +31,7 @@ function renderSummary(): void {
     } else {
       listDiv.innerHTML = cart
         .map((item) => {
-          const imgUrl = item.img ?? "/placeholder.jpg";
+          const imgUrl = item.image ?? "/placeholder.jpg";
           const lineTotal = item.price * item.quantity;
 
           return `
