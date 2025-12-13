@@ -1,39 +1,98 @@
 main {
+  background-color: #ffffff;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+main .contact-bg-image {
+  display: none;
 }
 main #contactSection {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
   align-items: center;
-  max-width: 30rem;
-  height: 50vh;
-  gap: 10px;
-  margin: 20px;
+  max-width: 1fr;
+  height: 100%;
+  gap: 5px;
+  padding-top: 5%;
+}
+main #contactSection #text-container {
+  width: 350px;
 }
 main #contactSection h2 {
-  margin: 0px;
+  text-align: center;
+  color: rgba(14, 22, 29, 0.9254901961);
+  margin: 10px 0px;
+}
+main #contactSection h4 {
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  color: #555;
 }
 main #contactSection form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 20px;
+  margin: 20px 0px;
   width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #ffffff;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
 }
 main #contactSection form .contact-form {
   height: 30px;
-  border: 1px solid black;
+  /* border: 1px solid $color-text-main; */
   border-radius: 5px;
   padding-left: 10px;
   outline: none;
+  background: #ffffff;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
 }
 main #contactSection form #message-box {
   height: 100px;
   padding-top: 10px;
   padding-left: 10px;
   border-radius: 5px;
-  border: 1px solid black;
+  background: #ffffff;
+  border: 1px solid #ebdfd0;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+}
+main #contactSection form button {
+  background-color: #ffb84d;
+  width: 80px;
+  align-self: center;
+  border: 0;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+  padding: 4px 0px;
+  font-weight: bold;
+  color: #0e161d;
+}
+
+@media (min-width: 750px) {
+  main {
+    justify-content: space-between;
+  }
+  main .contact-bg-image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    height: 90dvh;
+  }
+  main #contactSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    height: 100%;
+    gap: 3px;
+    padding-top: 0;
+    padding-left: 15%;
+    z-index: 1;
+  }
 }/*# sourceMappingURL=contactPageStyle.css.map */
