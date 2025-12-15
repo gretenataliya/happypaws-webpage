@@ -66,10 +66,8 @@
             </div>
 
             <!-- ABOUT & CONTACT som är egna sektionstitlar -->
-            <a href="about.html" class="sidebar-section-link">About</a>
-            <a href="contact-us.html" class="sidebar-section-link"
-              >Contact Us</a
-            >
+            <a href="aboutPage.html" class="sidebar-section-link">About</a>
+            <a href="contactPage.html" class="sidebar-section-link">Contact Us</a>
           </nav>
         </aside>
 
@@ -91,8 +89,8 @@
           </div>
         </div>
 
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact-us.html" class="nav-link">Contact Us</a>
+        <a href="aboutPage.html" class="nav-link">About</a>
+        <a href="contactPage.html" class="nav-link">Contact Us</a>
       </nav>
     </header>
     <!-- MAIN -->
@@ -115,7 +113,7 @@
               src="src/assets/about/grete-dogs.jpg"
               alt="The dogs of Happy Paws"
             />
-            <p class="name-tag">Name</p>
+            <p class="name-tag">Milli & Leya</p>
           </div>
           <div class="ceo-card">
             <img
@@ -129,33 +127,137 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footerInfo">
+   <footer class="footer">
+  <div class="footerContent">
+
+    <!-- BRAND -->
+    <div class="footerInfo footerBrand">
+      <h3>Happy Paws 🐾</h3>
+      <p>
+        Everything your pet needs - food, toys, sleep & care.
+      </p>
+      <p>Designed with love for happy tails.
+      </p>
+    </div>
+
+    <!-- DESKTOP VERSION (always visible) -->
+    <div class="footerDesktop">
+      <div class="footerCol">
         <h4>Information</h4>
         <ul>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Privacy Policy</li>
+          <li><a href="aboutPage.html">About Us</a></li>
+          <li><a href="contactPage.html">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
         </ul>
       </div>
-      <div class="footerInfo">
+
+      <div class="footerCol">
         <h4>Customer Service</h4>
         <ul>
-          <li>FAQ</li>
-          <li>Delivery Information</li>
-          <li>Returns</li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Delivery Information</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Order Tracking</a></li>
         </ul>
       </div>
-      <div class="footerInfo">
-        <h4>Follow Us Here!</h4>
+
+      <div class="footerCol">
+        <h4>Shop</h4>
         <ul>
-          <li>Instagram</li>
-          <li>Facebook</li>
-          <li>Pinterest</li>
+          <li><a href="#">Eat</a></li>
+          <li><a href="#">Walk</a></li>
+          <li><a href="#">Sleep</a></li>
+          <li><a href="#">Play</a></li>
         </ul>
       </div>
-      <p>© 2025 Happy Paws</p>
-    </footer>
+
+      <div class="footerCol">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Pinterest</a></li>
+        </ul>
+
+        <form class="newsletter">
+          <input type="email" placeholder="Your email" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- MOBILE VERSION (accordion) -->
+    <div class="footerMobile">
+      <details class="footerSection">
+        <summary class="footerSummary">Information</summary>
+        <ul class="footerList">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </details>
+
+      <details class="footerSection">
+        <summary class="footerSummary">Customer Service</summary>
+        <ul class="footerList">
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Delivery Information</a></li>
+          <li><a href="#">Returns & Refunds</a></li>
+          <li><a href="#">Order Tracking</a></li>
+        </ul>
+      </details>
+
+      <details class="footerSection">
+        <summary class="footerSummary">Shop</summary>
+        <ul class="footerList">
+          <li><a href="#">Eat</a></li>
+          <li><a href="#">Walk</a></li>
+          <li><a href="#">Sleep</a></li>
+          <li><a href="#">Play</a></li>
+        </ul>
+      </details>
+
+    <details class="footerSection">
+  <summary class="footerSummary">Follow Us</summary>
+
+  <!-- SOCIAL ICONS (MOBILE ONLY) -->
+  <div class="footerSocialIcons">
+    <a href="#" aria-label="Instagram">
+      <img
+        src="./src/assets/icons/instagram-icon.svg"
+        alt="Instagram"
+      />
+    </a>
+
+    <a href="#" aria-label="Facebook">
+      <img
+        src="./src/assets/icons/facebook-icon.svg"
+        alt="Facebook"
+      />
+    </a>
+
+    <a href="#" aria-label="TikTok">
+      <img
+        src="./src/assets/icons/tiktok-icon.svg"
+        alt="TikTok"
+      />
+    </a>
+  </div>
+
+  <form class="newsletter">
+    <input type="email" placeholder="Your email" />
+    <button type="submit">Subscribe</button>
+  </form>
+  </details>
+    </div>
+  </div>
+
+  <div class="footerBottom">
+    <p>© 2025 Happy Paws. All rights reserved.</p>
+  </div>
+</footer>
 
     <!-- HENNES SCRIPT -->
     <script type="module" src="/src/productpage/productPage.ts"></script>

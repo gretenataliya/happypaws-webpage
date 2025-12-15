@@ -1,5 +1,5 @@
 import type { Product } from "../models/Product";
-import { addToCart } from "../assets/cart/cartService";
+import { addToCart } from "../cart/cartService";
 
 export function renderProducts(list: Product[]) {
   const productContainer = document.getElementById("productContainer");

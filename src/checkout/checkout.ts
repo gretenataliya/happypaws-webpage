@@ -1,4 +1,4 @@
-import '../../main.scss';
+import '../main.scss';
 import './checkout.scss';
 import { getCart, updateCartCount } from "../cart/cartService";
 import type { CartItem } from "../cart/cartService";

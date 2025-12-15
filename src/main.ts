@@ -1,7 +1,7 @@
 import "./main.scss";
 import { products } from "./assets/products";
 import { createModal } from "./productpage/productServices";
-import { updateCartCount } from "../src/assets/cart/cartService";
+import { updateCartCount } from "../src/cart/cartService";
 
 updateCartCount();
 

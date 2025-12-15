@@ -22,7 +22,6 @@ body {
   margin: 0;
   padding: 0;
   max-width: 100%;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -976,12 +975,13 @@ a {
 // ============================
 // MODAL
 // ============================
+
 #modal {
   border-radius: 15px;
   border: 1px solid #ebdfd0;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
   max-width: 800px;
-  position: relative;
+  position: fixed;
 
   #closeModalBtn {
     position: absolute;
@@ -1019,7 +1019,7 @@ a {
       margin: 10px;
       gap: 20px;
 
-      @media (min-width: 800px) {
+    @media (min-width: 800px) {
         padding: 10px 0;
       }
 
@@ -1066,6 +1066,30 @@ a {
       border: 1px solid #ebdfd0;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
       margin: 5px;
+    }
+  }
+
+  @media (max-width: 799px) {
+    #modalBody {
+      width: 0 auto; 
+
+    .textDiv {
+        width: 100%;
+        margin: 0;
+        padding: 0 10px;
+        align-items: center;
+        text-align: center;
+
+        .cartBtn {
+          align-self: center;
+        }
+      }
+
+      .modalImg {
+        align-self: center;
+        max-width: 300px;
+        margin: 0;
+      }
     }
   }
 }
@@ -1467,3 +1491,4 @@ a {
     display: block !important;
   }
 }
+

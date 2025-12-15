@@ -3,7 +3,7 @@ import "../productpage/productPageStyle.scss";
 
 import { products } from "../assets/products";
 import { renderProducts } from "./productServices";
-import { updateCartCount } from "../assets/cart/cartService";
+import { updateCartCount } from "../cart/cartService";
 
 type Category = "eat" | "sleep" | "walk" | "play";
 
