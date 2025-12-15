@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="./src/aboutpage/aboutPageStyle.scss" />
   </head>
   <body>
-    <header>
+    <header class="site-header">
       <div class="menu">
-        <!-- ÖVRE RAD (desktop + mobil): logo + search (desktop) + cart -->
+        <!-- Den övre raden med cart -->
         <div class="menu-row menu-row-top">
           <!-- LOGO -->
           <a href="index.html" class="logo-link">
@@ -24,18 +24,6 @@
             />
             <span>Happy Paws</span>
           </a>
-
-          <!-- SEARCH – desktop -->
-          <form class="search-bar desktop-search">
-            <input
-              type="text"
-              placeholder="Search the shop"
-              aria-label="Search the shop"
-            />
-            <button type="submit" class="search-btn">
-              <img src="./src/assets/icons/search-icon.png" alt="search-icon" />
-            </button>
-          </form>
 
           <!-- CART -->
           <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
@@ -51,21 +39,9 @@
             <span></span>
             <span></span>
             <span></span>
+            <span></span>
           </label>
-
-          <!-- SEARCH – mobil -->
-          <form class="search-bar mobile-search">
-            <input
-              type="text"
-              placeholder="Search the shop"
-              aria-label="Search the shop"
-            />
-            <button type="submit" class="search-btn">
-              <img src="./src/assets/icons/search-icon.png" alt="search-icon" />
-            </button>
-          </form>
         </div>
-
         <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
         <input
           type="checkbox"
@@ -82,14 +58,14 @@
             <!-- PRODUCTS-grupp -->
             <div class="sidebar-group">
               <p class="sidebar-group-title">Products</p>
+              <a href="productPage.html?category=eat#eat">Eat</a>
+              <a href="productPage.html?category=walk#walk">Walk</a>
+              <a href="productPage.html?category=sleep#sleep">Sleep</a>
+              <a href="productPage.html?category=play#play">Play</a>
               <a href="productPage.html">See all products</a>
-              <a href="walk.html">Walk</a>
-              <a href="eat.html">Eat</a>
-              <a href="sleep.html">Sleep</a>
-              <a href="play.html">Play</a>
             </div>
 
-            <!-- ABOUT & CONTACT som egna sektionstitlar -->
+            <!-- ABOUT & CONTACT som är egna sektionstitlar -->
             <a href="about.html" class="sidebar-section-link">About</a>
             <a href="contact-us.html" class="sidebar-section-link"
               >Contact Us</a
@@ -108,10 +84,10 @@
           <a href="productPage.html" class="nav-link">Products</a>
           <div class="nav-submenu">
             <a href="productPage.html">See all products</a>
-            <a href="productPage.html#walk">Walk</a>
-            <a href="productPage.html#eat">Eat</a>
-            <a href="productPage.html#sleep">Sleep</a>
-            <a href="productPage.html#play">Play</a>
+            <a href="productPage.html?category=walk#walk">Walk</a>
+            <a href="productPage.html?category=eat#eat">Eat</a>
+            <a href="productPage.html?category=sleep#sleep">Sleep</a>
+            <a href="productPage.html?category=play#play">Play</a>
           </div>
         </div>
 
