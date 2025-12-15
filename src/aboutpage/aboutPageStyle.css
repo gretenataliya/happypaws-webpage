@@ -29,9 +29,8 @@ h2 {
   justify-content: space-between;
   align-items: center;
   background-color: #fff7f0;
-  padding: 20px 0px;
+  padding: 40px 0px;
   gap: 1rem;
-  margin-top: 1rem;
 }
 #ceo-section #ceo-container {
   display: flex;
@@ -64,7 +63,7 @@ h2 {
     width: 600px;
   }
   #about-section {
-    padding: 4rem;
+    padding: 2rem;
   }
   #ceo-section #ceo-container {
     flex-direction: row;

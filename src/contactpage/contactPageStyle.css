@@ -15,6 +15,7 @@ main #contactSection {
   height: 100%;
   gap: 5px;
   padding-top: 5%;
+  /* Contact Form */
 }
 main #contactSection #text-container {
   width: 350px;
@@ -45,7 +46,6 @@ main #contactSection form {
 }
 main #contactSection form .contact-form {
   height: 30px;
-  /* border: 1px solid $color-text-main; */
   border-radius: 5px;
   padding-left: 10px;
   outline: none;

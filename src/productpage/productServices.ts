@@ -1,6 +1,9 @@
 import type { Product } from "../models/Product";
 import { addToCart } from "../cart/cartService";
 
+//-----------------------------------------------------------------------------------------------
+// Show products on productPage:
+//-----------------------------------------------------------------------------------------------
 export function renderProducts(list: Product[]) {
   const productContainer = document.getElementById("productContainer");
   if (!productContainer) return;
@@ -37,14 +40,18 @@ export function renderProducts(list: Product[]) {
     productContainer.appendChild(card);
 
     card.addEventListener("click", () => {
-      const modal = document.getElementById("modal") as HTMLDialogElement | null;
+      const modal = document.getElementById(
+        "modal"
+      ) as HTMLDialogElement | null;
       if (!modal) return;
       createModal(product);
       modal.showModal();
     });
   });
 }
-
+//-----------------------------------------------------------------------------------------------
+// Show product description when clicking a product:
+//-----------------------------------------------------------------------------------------------
 export function createModal(product: Product) {
   const modalBody = document.getElementById("modalBody");
   if (!modalBody) return;

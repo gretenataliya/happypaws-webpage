@@ -21,14 +21,16 @@ function isCategory(value: string): value is Category {
 }
 
 function normalizeCategory(value: unknown): Category | null {
-  const v = String(value ?? "").toLowerCase().trim();
+  const v = String(value ?? "")
+    .toLowerCase()
+    .trim();
   return isCategory(v) ? v : null;
 }
 
 function getFilteredProducts() {
   let result = [...products];
 
-  // Category filter (om activeCategories är tom => visa alla)
+  // Category filter (if activeCategories is empty => show all)
   if (activeCategories.size > 0) {
     result = result.filter((p: any) => {
       const cat = normalizeCategory(p.category);
@@ -56,7 +58,7 @@ function applyFilters() {
 }
 
 function syncActiveButtonStyles() {
-  // Förutsätter att dina knappar har class="catBtn"
+  // Assumes your buttons have class="catBtn"
   const buttons = document.querySelectorAll<HTMLButtonElement>(".catBtn");
 
   buttons.forEach((btn) => {
@@ -65,7 +67,7 @@ function syncActiveButtonStyles() {
 
     const cat = normalizeCategory(raw);
 
-    // All-knappen: aktiv om inga kategorier är valda
+    // The All-button: active if no other categories are selected
     if (raw === "all") {
       btn.classList.toggle("is-active", activeCategories.size === 0);
       return;
@@ -79,17 +81,17 @@ function syncActiveButtonStyles() {
 function syncUrl() {
   const url = new URL(window.location.href);
 
-  // Spara categories i query string
+  // Save categories in query string
   if (activeCategories.size === 0) {
     url.searchParams.delete("category");
     url.searchParams.delete("categories");
   } else {
     const list = Array.from(activeCategories).join(",");
     url.searchParams.set("categories", list);
-    url.searchParams.delete("category"); // vi kör bara categories när vi har set
+    url.searchParams.delete("category");
   }
 
-  // Spara search i query string (valfritt men nice)
+  // Save search i query string (optional but nice)
   if (searchTerm.trim() === "") {
     url.searchParams.delete("q");
   } else {
@@ -134,7 +136,7 @@ function setCategoriesFromUrl() {
     return;
   }
 
-  // Inget hittat => All
+  // Nothing found => All
   activeCategories.clear();
 }
 
@@ -143,7 +145,9 @@ function setSearchFromUrl() {
   const q = url.searchParams.get("q");
   if (q) searchTerm = q;
 
-  const input = document.getElementById("productSearchInput") as HTMLInputElement | null;
+  const input = document.getElementById(
+    "productSearchInput"
+  ) as HTMLInputElement | null;
   if (input) input.value = searchTerm;
 }
 
@@ -152,9 +156,9 @@ function setSearchFromUrl() {
 ----------------------------- */
 
 function initCategoryButtons() {
-  // Förutsätter:
-  // - All Products knapp har data-category="all"
-  // - Eat har data-category="eat" osv
+  // Assumes:
+  // - All Products button has data-category="all"
+  // - Eat has data-category="eat" and so on..
   const buttons = document.querySelectorAll<HTMLButtonElement>(".catBtn");
 
   buttons.forEach((btn) => {
@@ -162,7 +166,7 @@ function initCategoryButtons() {
       const raw = btn.dataset.category;
       if (!raw) return;
 
-      // All Products: rensa set
+      // All Products: clear set
       if (raw === "all") {
         activeCategories.clear();
         applyFilters();
@@ -172,7 +176,7 @@ function initCategoryButtons() {
       const cat = normalizeCategory(raw);
       if (!cat) return;
 
-      // Toggle kategori (multi-select)
+      // Toggle category (multi-select)
       if (activeCategories.has(cat)) {
         activeCategories.delete(cat);
       } else {
@@ -185,7 +189,9 @@ function initCategoryButtons() {
 }
 
 function initSearch() {
-  const input = document.getElementById("productSearchInput") as HTMLInputElement | null;
+  const input = document.getElementById(
+    "productSearchInput"
+  ) as HTMLInputElement | null;
   if (!input) return;
 
   input.addEventListener("input", () => {
@@ -195,8 +201,7 @@ function initSearch() {
 }
 
 function scrollToFiltersIfNeeded() {
-  // Valfritt: scrolla till productSection när man kommer via nav
-  // Sätt id="productSection" på din wrapper/sektion
+  // Optional: scroll to productSection when arriving through Nav
   const hasCategoryIntent =
     new URL(window.location.href).searchParams.has("category") ||
     new URL(window.location.href).searchParams.has("categories") ||

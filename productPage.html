@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Paws – Products</title>
 
-    <!-- Keep only global CSS if you still use it -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -20,7 +19,10 @@
     <div class="menu">
       <div class="menu-row menu-row-top">
         <a href="index.html" class="logo-link">
-          <img src="./src/assets/logos/startpage-logo.svg" alt="Happy Paws logo" />
+          <img
+            src="./src/assets/logos/startpage-logo.svg"
+            alt="Happy Paws logo"
+          />
           <span>Happy Paws</span>
         </a>
 
@@ -36,7 +38,12 @@
         </label>
       </div>
 
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation" />
+      <input
+        type="checkbox"
+        id="menu-toggle"
+        class="menu-toggle"
+        aria-label="Toggle navigation"
+      />
 
       <aside class="sidebar">
         <label for="menu-toggle" class="sidebar-close-btn">✕</label>
@@ -48,7 +55,6 @@
             <a href="productPage.html?category=sleep">Sleep</a>
             <a href="productPage.html?category=play">Play</a>
             <a href="productPage.html">See all products</a>
-
           </div>
 
           <a href="aboutPage.html" class="sidebar-section-link">About</a>
@@ -66,16 +72,43 @@
     </nav>
 
     <!-- PRODUCT PAGE CONTENT -->
+
     <main>
+      <!-- Category buttons -->
       <section class="productSection" id="productSection">
         <div class="catBtnSection" id="categories">
-          <button class="catBtn" id="allBtn" data-category="all" type="button">All Products</button>
-          <button class="catBtn" id="eatBtn" data-category="eat" type="button">Eat</button>
-          <button class="catBtn" id="sleepBtn" data-category="sleep" type="button">Sleep</button>
-          <button class="catBtn" id="walkBtn" data-category="walk" type="button">Walk</button>
-          <button class="catBtn" id="playBtn" data-category="play" type="button">Play</button>
+          <button class="catBtn" id="allBtn" data-category="all" type="button">
+            All Products
+          </button>
+          <button class="catBtn" id="eatBtn" data-category="eat" type="button">
+            Eat
+          </button>
+          <button
+            class="catBtn"
+            id="sleepBtn"
+            data-category="sleep"
+            type="button"
+          >
+            Sleep
+          </button>
+          <button
+            class="catBtn"
+            id="walkBtn"
+            data-category="walk"
+            type="button"
+          >
+            Walk
+          </button>
+          <button
+            class="catBtn"
+            id="playBtn"
+            data-category="play"
+            type="button"
+          >
+            Play
+          </button>
         </div>
-         <!-- Searchbar moved here -->
+        <!-- Searchbar  -->
         <div class="product-search">
           <form class="search-bar" id="productSearchForm">
             <input
@@ -89,143 +122,136 @@
             </button>
           </form>
         </div>
-
+        <!-- Products -->
         <div id="productContainer"></div>
       </section>
     </main>
 
-   <footer>
-       <footer class="footer">
-  <div class="footerContent">
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footerContent">
+        <!-- BRAND -->
+        <div class="footerInfo footerBrand">
+          <h3>Happy Paws 🐾</h3>
+          <p>Everything your pet needs - food, toys, sleep & care.</p>
+          <p>Designed with love for happy tails.</p>
+        </div>
 
-    <!-- BRAND -->
-    <div class="footerInfo footerBrand">
-      <h3>Happy Paws 🐾</h3>
-      <p>
-        Everything your pet needs - food, toys, sleep & care.
-      </p>
-      <p>Designed with love for happy tails.
-      </p>
-    </div>
+        <!-- DESKTOP VERSION (always visible) -->
+        <div class="footerDesktop">
+          <div class="footerCol">
+            <h4>Information</h4>
+            <ul>
+              <li><a href="aboutPage.html">About Us</a></li>
+              <li><a href="contactPage.html">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
 
-    <!-- DESKTOP VERSION (always visible) -->
-    <div class="footerDesktop">
-      <div class="footerCol">
-        <h4>Information</h4>
-        <ul>
-          <li><a href="aboutPage.html">About Us</a></li>
-          <li><a href="contactPage.html">Contact Us</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
+          <div class="footerCol">
+            <h4>Customer Service</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Order Tracking</a></li>
+            </ul>
+          </div>
+
+          <div class="footerCol">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="productPage.html?category=eat#eat">Eat</a></li>
+              <li><a href="productPage.html?category=walk#walk">Walk</a></li>
+              <li><a href="productPage.html?category=sleep#sleep">Sleep</a></li>
+              <li><a href="productPage.html?category=play#play">Play</a></li>
+            </ul>
+          </div>
+
+          <div class="footerCol">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Pinterest</a></li>
+            </ul>
+
+            <form class="newsletter">
+              <input type="email" placeholder="Your email" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- MOBILE VERSION (accordion) -->
+        <div class="footerMobile">
+          <details class="footerSection">
+            <summary class="footerSummary">Information</summary>
+            <ul class="footerList">
+              <li><a href="aboutPage.html">About Us</a></li>
+              <li><a href="contactPage.html">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </details>
+
+          <details class="footerSection">
+            <summary class="footerSummary">Customer Service</summary>
+            <ul class="footerList">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Delivery Information</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Order Tracking</a></li>
+            </ul>
+          </details>
+
+          <details class="footerSection">
+            <summary class="footerSummary">Shop</summary>
+            <ul class="footerList">
+              <li><a href="productPage.html?category=eat#eat">Eat</a></li>
+              <li><a href="productPage.html?category=walk#walk">Walk</a></li>
+              <li><a href="productPage.html?category=sleep#sleep">Sleep</a></li>
+              <li><a href="productPage.html?category=play#play">Play</a></li>
+            </ul>
+          </details>
+
+          <details class="footerSection">
+            <summary class="footerSummary">Follow Us</summary>
+
+            <!-- SOCIAL ICONS (MOBILE ONLY) -->
+            <div class="footerSocialIcons">
+              <a href="#" aria-label="Instagram">
+                <img
+                  src="./src/assets/icons/instagram-icon.svg"
+                  alt="Instagram"
+                />
+              </a>
+
+              <a href="#" aria-label="Facebook">
+                <img
+                  src="./src/assets/icons/facebook-icon.svg"
+                  alt="Facebook"
+                />
+              </a>
+
+              <a href="#" aria-label="TikTok">
+                <img src="./src/assets/icons/tiktok-icon.svg" alt="TikTok" />
+              </a>
+            </div>
+
+            <form class="newsletter">
+              <input type="email" placeholder="Your email" />
+              <button type="submit">Subscribe</button>
+            </form>
+          </details>
+        </div>
       </div>
 
-      <div class="footerCol">
-        <h4>Customer Service</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Delivery Information</a></li>
-          <li><a href="#">Returns & Refunds</a></li>
-          <li><a href="#">Order Tracking</a></li>
-        </ul>
+      <div class="footerBottom">
+        <p>© 2025 Happy Paws. All rights reserved.</p>
       </div>
-
-      <div class="footerCol">
-        <h4>Shop</h4>
-        <ul>
-          <li><a href="productPage.html?category=eat#eat">Eat</a></li>
-          <li><a href="productPage.html?category=walk#walk">Walk</a></li>
-          <li><a href="productPage.html?category=sleep#sleep">Sleep</a></li>
-          <li><a href="productPage.html?category=play#play">Play</a></li>
-        </ul>
-      </div>
-
-      <div class="footerCol">
-        <h4>Follow Us</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Pinterest</a></li>
-        </ul>
-
-        <form class="newsletter">
-          <input type="email" placeholder="Your email" />
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
-
-    <!-- MOBILE VERSION (accordion) -->
-    <div class="footerMobile">
-      <details class="footerSection">
-        <summary class="footerSummary">Information</summary>
-        <ul class="footerList">
-          <li><a href="aboutPage.html">About Us</a></li>
-          <li><a href="contactPage.html">Contact Us</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </details>
-
-      <details class="footerSection">
-        <summary class="footerSummary">Customer Service</summary>
-        <ul class="footerList">
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Delivery Information</a></li>
-          <li><a href="#">Returns & Refunds</a></li>
-          <li><a href="#">Order Tracking</a></li>
-        </ul>
-      </details>
-
-      <details class="footerSection">
-        <summary class="footerSummary">Shop</summary>
-        <ul class="footerList">
-          <li><a href="productPage.html?category=eat#eat">Eat</a></li>
-          <li><a href="productPage.html?category=walk#walk">Walk</a></li>
-          <li><a href="productPage.html?category=sleep#sleep">Sleep</a></li>
-          <li><a href="productPage.html?category=play#play">Play</a></li>
-        </ul>
-      </details>
-
-    <details class="footerSection">
-  <summary class="footerSummary">Follow Us</summary>
-
-  <!-- SOCIAL ICONS (MOBILE ONLY) -->
-  <div class="footerSocialIcons">
-    <a href="#" aria-label="Instagram">
-      <img
-        src="./src/assets/icons/instagram-icon.svg"
-        alt="Instagram"
-      />
-    </a>
-
-    <a href="#" aria-label="Facebook">
-      <img
-        src="./src/assets/icons/facebook-icon.svg"
-        alt="Facebook"
-      />
-    </a>
-
-    <a href="#" aria-label="TikTok">
-      <img
-        src="./src/assets/icons/tiktok-icon.svg"
-        alt="TikTok"
-      />
-    </a>
-  </div>
-
-  <form class="newsletter">
-    <input type="email" placeholder="Your email" />
-    <button type="submit">Subscribe</button>
-  </form>
-  </details>
-    </div>
-  </div>
-
-  <div class="footerBottom">
-    <p>© 2025 Happy Paws. All rights reserved.</p>
-  </div>
-</footer>
+    </footer>
 
     <script type="module" src="/src/productpage/productPage.ts"></script>
   </body>

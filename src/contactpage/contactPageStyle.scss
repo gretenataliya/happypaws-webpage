@@ -45,7 +45,7 @@ main {
             margin-bottom: 14px;
             color: #555;
         }
-
+        /* Contact Form */
         form {
             display: flex;
             flex-direction: column;
@@ -60,7 +60,6 @@ main {
 
             .contact-form {
                 height: 30px;
-                /* border: 1px solid $color-text-main; */
                 border-radius: 5px;
                 padding-left: 10px;
                 outline: none;
@@ -94,6 +93,10 @@ main {
         }
     }
 }
+
+// =================================
+// Media Queries for wider screens:
+// =================================
 @media (min-width: 750px) {
 
      main {

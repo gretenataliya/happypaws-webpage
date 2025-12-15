@@ -8,6 +8,10 @@ $color-header-bg: #0e161d;
 $color-nav-bg: #0e161dec;
 $color-button-accent: #ffb84d;
 
+
+// ============================
+// About Text Section:
+// ============================
 h2 {
     color:$color-header-bg;
     margin: 0;
@@ -34,15 +38,19 @@ h2 {
 
 }
 
+
+// ============================
+// CEO Section:
+// ============================
+
 #ceo-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-color: $bg-soft-beige;
-    padding: 20px 0px;
+    padding: 40px 0px;
     gap: 1rem;
-    margin-top: 1rem;
 
     #ceo-container {
     display: flex;
@@ -74,6 +82,9 @@ h2 {
     }
 }
 
+// =================================
+// Media Queries for wider screens:
+// =================================
 @media (min-width: 700px) {
 
 #paragraph {
@@ -81,7 +92,7 @@ h2 {
 }
 
 #about-section {
-    padding: 4rem;
+    padding: 2rem;
 }
 
 #ceo-section {

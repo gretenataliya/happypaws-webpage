@@ -11,7 +11,8 @@ $product-border: rgba(160, 136, 107, 0.3);
   gap: 18px;
 }
 
-/* Searchbar on product page */
+/*---------------------------------------------------------------------*/
+/* Searchbar */
 .product-search {
   width: 100%;
   display: flex;
@@ -20,7 +21,6 @@ $product-border: rgba(160, 136, 107, 0.3);
  
 }
 
-/* This matches your existing .search-bar look, but scoped */
 .product-search .search-bar {
   width: 100%;
   max-width: 480px;
@@ -57,13 +57,14 @@ $product-border: rgba(160, 136, 107, 0.3);
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  img {
+    width: 22px;
+    height: 22px;
+  }
 }
 
-.product-search .search-btn img {
-  width: 22px;
-  height: 22px;
-}
-
+/*---------------------------------------------------------------------*/
 /* Category buttons */
 .catBtnSection {
   width: min(920px, calc(100% - 40px));
@@ -93,7 +94,7 @@ $product-border: rgba(160, 136, 107, 0.3);
   color: #fff;
 }
 
-
+/*---------------------------------------------------------------------*/
 /* Product grid wrapper */
 #productContainer {
   width: min(920px, calc(100% - 40px));
@@ -107,6 +108,7 @@ $product-border: rgba(160, 136, 107, 0.3);
   padding: 22px;
 }
 
+/*---------------------------------------------------------------------*/
 /* Card */
 .productCard {
   background: $product-card-bg;
@@ -157,7 +159,8 @@ $product-border: rgba(160, 136, 107, 0.3);
   text-align: center;
 }
 
-/* Modal basic */
+/*---------------------------------------------------------------------*/
+/* Modal */
 #modal::backdrop {
   background: rgba(0, 0, 0, 0.35);
 }
@@ -229,6 +232,7 @@ $product-border: rgba(160, 136, 107, 0.3);
   opacity: 0.9;
 }
 
+/*---------------------------------------------------------------------*/
 /* Responsive */
 @media (min-width: 900px) {
   #productContainer {
