@@ -1364,8 +1364,8 @@ a {
   }
 
   .hero-btn {
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 2px; 
+    top: auto; 
   }
 
   #topSellerContainer {
@@ -1489,6 +1489,13 @@ a {
 
   .footerMobile {
     display: block !important;
+  }
+
+  .hero-btn {
+    position: sticky;
+    left: 52%;
+    transform: translateX(-50%);
+    top: auto;
   }
 }
 
