@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Jennies modal -->
+    <!-- Popular products modal -->
     <dialog id="modal">
       <div id="modalBody"></div>
       <button id="closeModalBtn">✕</button>
@@ -15,7 +15,7 @@
 
     <header class="site-header">
       <div class="menu">
-        <!-- Den övre raden med cart -->
+        <!-- Menu top row-->
         <div class="menu-row menu-row-top">
           <!-- LOGO -->
           <a href="index.html" class="logo-link">
@@ -33,9 +33,9 @@
           </a>
         </div>
 
-        <!-- NEDRE RAD (mobil): hamburger + search -->
+        <!-- Bottom row: hamburger + search -->
         <div class="menu-row menu-row-bottom">
-          <!-- HAMBURGER (öppnar sidomenyn) -->
+          <!-- HAMBURGER -->
           <label for="menu-toggle" class="hamburger-menu">
             <span></span>
             <span></span>
@@ -43,7 +43,7 @@
             <span></span>
           </label>
         </div>
-        <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
+        <!-- HIDDEN CHECKBOX FOR SIDEMENU TOGGLE -->
         <input
           type="checkbox"
           id="menu-toggle"
@@ -51,12 +51,12 @@
           aria-label="Toggle navigation"
         />
 
-        <!-- SIDOMENY (MOBIL) -->
+        <!-- SIDEMENU (MOBILE) -->
         <aside class="sidebar">
           <label for="menu-toggle" class="sidebar-close-btn">✕</label>
 
           <nav class="sidebar-nav">
-            <!-- PRODUCTS-grupp -->
+            <!-- PRODUCTS-group -->
             <div class="sidebar-group">
               <p class="sidebar-group-title">Products</p>
                 <a href="productPage.html?category=eat#eat">Eat</a>
@@ -66,19 +66,19 @@
                 <a href="productPage.html">See all products</a>
             </div>
 
-            <!-- ABOUT & CONTACT som är egna sektionstitlar -->
+            <!-- ABOUT & CONTACT -->
             <a href="aboutPage.html" class="sidebar-section-link">About</a>
             <a href="contactPage.html" class="sidebar-section-link">Contact Us</a>
           </nav>
         </aside>
 
-        <!-- MÖRK BAKGRUND BAKOM SIDOMENYN -->
+        <!-- DARK BACKGROUND BEHIND SIDEMENU -->
         <div class="menu-overlay"></div>
       </div>
 
       <!-- DESKTOP-NAV UNDER HEADER -->
       <nav class="main-nav">
-        <!-- Products med dropdown -->
+        <!-- Products with dropdown -->
         <div class="nav-item has-submenu">
           <a href="productPage.html" class="nav-link">Products</a>
           <div class="nav-submenu">
@@ -97,12 +97,12 @@
       <!-- HERO -->
       <div class="hero">
   <picture class="hero-picture">
-    <!-- Mobilbild (max 768px) -->
+    <!-- Mobile image (max 768px) -->
     <source
       srcset="./src/assets/startpage/mobile-startpage-header.png"
       media="(max-width: 900px)"
     />
-    <!-- Standard / desktop-bild -->
+    <!-- Standard / desktop image -->
     <img
       src="./src/assets/startpage/startpage-header.png"
       alt="Happy Paws dog banner"

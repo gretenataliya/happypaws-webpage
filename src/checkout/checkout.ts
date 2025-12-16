@@ -49,7 +49,7 @@ function renderSummary(): void {
     }
   }
 
-  // uppdaterar cart-badgen i headern
+  // Updates cart count badge
   updateCartCount();
 }
 
@@ -98,10 +98,10 @@ function showCheckoutPopup(name: string, totalItems: number, totalPrice: number)
 }
 
 function initCheckout(): void {
-  // Sätt badge direkt när sidan laddas
+  // Set badge immediately when the page loads
   updateCartCount();
 
-  // Rendera totals direkt
+  // Render totals immediately
   renderSummary();
 
   const form = document.getElementById("checkoutForm") as HTMLFormElement | null;
@@ -121,13 +121,13 @@ function initCheckout(): void {
     const nameInput = document.getElementById("name") as HTMLInputElement | null;
     const name = (nameInput?.value.trim() || "friend").split(" ")[0];
 
-    // Töm vagnen (samma key som i cartService)
+    // Empty cart
     localStorage.removeItem(CART_KEY);
 
-    // Uppdatera UI
+    // Update UI
     renderSummary();
 
-    // Resetta formuläret
+    // Reset form
     form.reset();
 
     // Popup

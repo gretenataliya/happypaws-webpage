@@ -18,7 +18,7 @@ body.checkout-page {
   padding: 40px 16px 60px;
 }
 
-/* Wrapper runt allt innehåll */
+/* Wrapper  */
 
 .checkout-wrapper {
   max-width: 1000px;
@@ -43,7 +43,7 @@ body.checkout-page {
   gap: 24px;
 }
 
-/* Kort-stilen */
+/* Card style */
 
 .checkout-card {
   background: #ffffff;
@@ -54,7 +54,7 @@ body.checkout-page {
 }
 
 /* ============================
-   FORM – KUNDUPPGIFTER
+   FORM – FIELDS
 ============================ */
 
 .checkout-form {
@@ -92,7 +92,7 @@ body.checkout-page {
 }
 
 /* ============================
-   CHECKOUT-KNAPP
+   CHECKOUT-BUTTON
 ============================ */
 
 .checkout-btn {
@@ -204,7 +204,7 @@ body.checkout-page {
 
 
 /* ============================
-   FOOTER PÅ CHECKOUT-SIDAN
+   FOOTER ADJUSTMENT
 ============================ */
 
 .checkout-page .footer {
@@ -212,7 +212,7 @@ body.checkout-page {
 }
 
 /* ============================
-   RESPONSIV DESIGN
+   RESPONSIVE DESIGN
 ============================ */
 
 @media (max-width: 768px) {
@@ -277,7 +277,7 @@ body.checkout-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000; // över allt, även footer
+  z-index: 2000; 
 }
 
 .checkout-popup {
@@ -350,7 +350,7 @@ body.checkout-page {
   color: #888;
 }
 
-/* Animation för tass-ikonen */
+/* Animation for paw icon */
 @keyframes wag-tail {
   0% {
     transform: rotate(0deg);
