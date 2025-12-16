@@ -8,7 +8,7 @@
   </head>
   <body class="cart-page">
   <div class="menu">
-    <!-- ÖVRE RAD: logo + search + cart -->
+    <!-- top row: logo + search + cart -->
     <div class="menu-row menu-row-top">
       <!-- LOGO -->
       <a href="index.html" class="logo-link">
@@ -25,9 +25,9 @@
       </a>
     </div>
 
-    <!-- NEDRE RAD (mobil): hamburger + search -->
+    <!-- bottom row (mobile): hamburger + search -->
     <div class="menu-row menu-row-bottom">
-      <!-- HAMBURGER (öppnar sidomenyn) -->
+      <!-- HAMBURGER -->
       <label for="menu-toggle" class="hamburger-menu">
         <span></span>
         <span></span>
@@ -35,7 +35,7 @@
       </label>
     </div>
 
-    <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
+    <!-- HIDDEN CHECKBOX CONTROLLING SIDEBAR -->
     <input
       type="checkbox"
       id="menu-toggle"
@@ -43,12 +43,12 @@
       aria-label="Toggle navigation"
     />
 
-    <!-- SIDOMENY (MOBIL) -->
+    <!-- SIDEBAR (MOBILE) -->
     <aside class="sidebar">
       <label for="menu-toggle" class="sidebar-close-btn">✕</label>
 
       <nav class="sidebar-nav">
-        <!-- PRODUCTS-grupp -->
+        <!-- PRODUCTS-group -->
         <div class="sidebar-group">
           <p class="sidebar-group-title">Products</p>
             <a href="productPage.html">See all products</a>
@@ -58,19 +58,19 @@
             <a href="productPage.html?category=play#play">Play</a>
         </div>
 
-        <!-- ABOUT & CONTACT som är egna sektionstitlar -->
+        <!-- ABOUT & CONTACT -->
         <a href="aboutPage.html" class="sidebar-section-link">About</a>
         <a href="contactPage.html" class="sidebar-section-link">Contact Us</a>
       </nav>
     </aside>
 
-    <!-- MÖRK BAKGRUND BAKOM SIDOMENYN -->
+    <!-- DARK BACKGROUND BEHIND SIDEBAR -->
     <div class="menu-overlay"></div>
   </div>
 
-  <!-- DESKTOP-NAV UNDER HEADER -->
+  <!-- DESKTOP-NAV BELOW HEADER -->
   <nav class="main-nav">
-    <!-- Products med dropdown -->
+    <!-- Products with dropdown -->
     <div class="nav-item has-submenu">
       <a href="products.html" class="nav-link">Products</a>
       <div class="nav-submenu">
@@ -92,7 +92,7 @@
           <h1>Your Shopping Cart</h1>
 
           <section id="cartItems">
-            <!-- Cart items renderas här av cart.ts -->
+            <!-- Cart items here below-->
           </section>
         </div>
 
@@ -241,7 +241,7 @@
   </div>
 </footer>
 
-    <!-- Endast cart-logik på denna sida -->
+    <!-- cart.ts -->
     <script type="module" src="/src/cart/cart.ts"></script>
   </body>
 </html>

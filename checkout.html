@@ -8,7 +8,7 @@
   </head>
   <body class="checkout-page">
   <div class="menu">
-    <!-- ÖVRE RAD: logo + search + cart -->
+    <!-- top row: logo + search + cart -->
     <div class="menu-row menu-row-top">
       <!-- LOGO -->
       <a href="index.html" class="logo-link">
@@ -26,9 +26,9 @@
       </a>
     </div>
 
-    <!-- NEDRE RAD (mobil): hamburger + search -->
+    <!-- Bottom row (mobile): hamburger + search -->
     <div class="menu-row menu-row-bottom">
-      <!-- HAMBURGER (öppnar sidomenyn) -->
+      <!-- HAMBURGER  -->
       <label for="menu-toggle" class="hamburger-menu">
         <span></span>
         <span></span>
@@ -36,7 +36,7 @@
       </label>
     </div>
 
-    <!-- GÖMD CHECKBOX SOM STYR SIDOMENYN -->
+    <!-- HIDDEN CHECKBOX FOR SIDEMENU TOGGLE -->
     <input
       type="checkbox"
       id="menu-toggle"
@@ -44,12 +44,12 @@
       aria-label="Toggle navigation"
     />
 
-    <!-- SIDOMENY (MOBIL) -->
+    <!-- SIDEMENU (MOBILE) -->
     <aside class="sidebar">
       <label for="menu-toggle" class="sidebar-close-btn">✕</label>
 
       <nav class="sidebar-nav">
-        <!-- PRODUCTS-grupp -->
+        <!-- PRODUCTS-group -->
         <div class="sidebar-group">
           <p class="sidebar-group-title">Products</p>
             <a href="productPage.html">See all products</a>
@@ -59,19 +59,19 @@
             <a href="productPage.html?category=play#play">Play</a>
         </div>
 
-        <!-- ABOUT & CONTACT som är egna sektionstitlar -->
+        <!-- ABOUT & CONTACT -->
         <a href="aboutPage.html" class="sidebar-section-link">About</a>
         <a href="contactPage.html" class="sidebar-section-link">Contact Us</a>
       </nav>
     </aside>
 
-    <!-- MÖRK BAKGRUND BAKOM SIDOMENYN -->
+    <!-- DARK BACKGROUND BEHIND SIDEMENU -->
     <div class="menu-overlay"></div>
   </div>
 
-  <!-- desktop naven -->
+  <!-- desktop navigation -->
   <nav class="main-nav">
-    <!-- Products med dropdown -->
+    <!-- Products with dropdown -->
     <div class="nav-item has-submenu">
       <a href="products.html" class="nav-link">Products</a>
       <div class="nav-submenu">
@@ -92,7 +92,7 @@
         <h1 class="checkout-title">Checkout</h1>
 
         <div class="checkout-grid">
-          <!-- VÄNSTER: FORM -->
+          <!-- LEFT: FORM -->
           <form id="checkoutForm" class="checkout-card checkout-form">
             <div class="form-group">
               <label for="name">Name</label>
@@ -129,7 +129,7 @@
             <button type="submit" class="checkout-btn">Place order</button>
           </form>
 
-          <!-- HÖGER: ORDER SUMMARY -->
+          <!-- RIGHT: ORDER SUMMARY -->
           <aside class="checkout-card checkout-summary">
             <h2>Order summary</h2>
 
@@ -287,7 +287,7 @@
   </div>
 </footer>
 
-    <!-- Endast checkout-logik på denna sida -->
+    <!-- Checkout script -->
     <script type="module" src="/src/checkout/checkout.ts"></script>
   </body>
 </html>

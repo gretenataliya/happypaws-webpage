@@ -82,7 +82,7 @@ function renderCart(): void {
     article.className = "cart-item";
     article.dataset.id = item.id;
 
-    // item.img finns i Product (din products-lista använder "img")
+    // item.img in Product (product list uses "img")
     const imageUrl = item.image ?? "/placeholder.jpg";
 
     article.innerHTML = `
@@ -117,7 +117,7 @@ function renderCart(): void {
   updateCartCount();
 }
 
-// Event delegation för knappar i cart-items
+// Event delegation for buttons in cart items
 if (cartContainer) {
   cartContainer.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;

@@ -6,7 +6,7 @@ import { updateCartCount } from "../src/cart/cartService";
 updateCartCount();
 
 
-// Visa TopSeller-produkter på landing page:
+// Show Popular products on startpage:
 const renderTopSellers = () => {
   const topSellerContainer = document.getElementById("topSellerContainer");
 
@@ -44,4 +44,4 @@ const renderTopSellers = () => {
   }
 };
 renderTopSellers();
-//-------------------------------------------------------------
+
