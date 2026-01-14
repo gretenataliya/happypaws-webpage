@@ -1,4 +1,4 @@
-import ".././main.scss";
+import "../main.scss";
 import "../productpage/productPageStyle.scss";
 
 import { products } from "../assets/products";
